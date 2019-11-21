@@ -169,21 +169,23 @@ render() {
                 : <div></div>
             })}
             </div></li>
-            : <div></div>
+            :<div>Services not provided for this address</div>
+
         })}</ol></div></div>) :
         (<div><div id='searchDiv'></div>
         <div>
         <ol class="o-layout-grid o-layout-grid--3">{this.maps.map((webmap) => {
-            return webmap.featureCnt > 0 ? <li class="o-layout-grid__item"><div><h3>{webmap.title}</h3>
+            return<li class="o-layout-grid__item"><div><h3>{webmap.title}</h3>
             {webmap.layers.map((layer) => {
                 return layer.features.length > 0 ? <div>
                 {layer.features.map((feature, i) => {
                     return <div id={layer.id + '_' + i}>{this.loadFeatureWidget(layer.id + '_' + i, feature)}<br /></div>
                 })}</div>
-                : <div></div>
+                : <div class="esri-feature esri-widget"><br/><h4 class="esri-feature__title">{layer.title}</h4><div class="esri-feature__text esri-feature__content-element"><div class="esri-feature__main-container">Service not provided for this address</div></div></div>
+
             })}
             </div></li>
-            : <div></div>
+
         })}</ol></div></div>)
     }
 }
