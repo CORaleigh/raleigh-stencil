@@ -19,7 +19,7 @@ export class FindMyService {
                 container: 'searchDiv', includeDefaultSources: false,
                 sources: [
                     {
-                        locator: new Locator({url:"https://maps.raleighnc.gov/arcgis/rest/services/Locators/FindMyService1/GeocodeServer"}),
+                        locator: new Locator({url:"https://maps.raleighnc.gov/arcgis/rest/services/Locators/FindMyService/GeocodeServer"}),
                         placeholder:"Search by address"
                     }
                 ]
@@ -44,7 +44,6 @@ export class FindMyService {
                         let layers = [...[]];
                         map.layers.forEach((layer) => {
                             if (showLayers.length === 0 || showLayers.includes(layer.title)) {
-                                debugger
                                 layer.queryFeatures({ geometry: selection.result.feature.geometry, outFields: ['*'] }).then(featureSet => {
                                     layers = [...layers, { title: layer.title, features: featureSet.features, id: layer.id }]
                                     featureCnt += featureSet.features.length;
@@ -113,8 +112,7 @@ export class FindMyService {
                                         map.featureCnt = 0;
                                         this.webmaps.push(map);
                                         if (this.webmaps.length === result.results.length) {
-                                            console.log(result.results);
-                                            console.log(WebMap);
+
                                             this.webmaps = [...this.webmaps];
                                         }
                                     });

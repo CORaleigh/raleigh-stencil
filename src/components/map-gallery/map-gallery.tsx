@@ -16,6 +16,8 @@ export class MapGallery {
                 portal.queryGroups({query:"id:"+this.groupId}).then(result =>
                     {
                         if (result.results.length) {
+                            debugger
+
                             let group = result.results[0];
                             group.queryItems({query:"type:Application"}).then(result =>
                                 {
@@ -32,7 +34,7 @@ export class MapGallery {
             }
             render() {
                 return <div class="views-element-container">
-                <ol class="o-layout-grid o-layout-grid--4">
+                <ol class="o-layout-grid o-layout-grid--3">
                 {this.items.map(item =>
                     {
                         return <li class="o-layout-grid__item">
