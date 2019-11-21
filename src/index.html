@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/raleigh-stencil.esm.js"></script>
+  <script nomodule src="/build/raleigh-stencil.js"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+  <script>
+    var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+    window.dojoConfig = {
+      packages: [
+        {
+          name: "app",
+          location: locationPath + "/app"
+        }
+      ]
+    };
+  </script> 
+  <script src="https://js.arcgis.com/4.13/"></script>
+
+</head>
+<body>
+
+<web-map  filter expandedwidget="legend" popup="false" highlight="false" querylayer="Capital_Improvement_Projects_Public" querywhere="PROJ_NAME = '121 Hillsborough Street'"  navigate="false" map-id="2e42cd610a4e43af9c732ac89a400a63" popupdocked dockposition="bottom-right" legend layerlist basemapselect search></web-map>
+</body>
+</html>
