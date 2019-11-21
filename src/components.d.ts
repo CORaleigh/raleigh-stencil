@@ -16,7 +16,7 @@ export namespace Components {
     'layers': string;
   }
   interface MapGallery {
-    'id': string;
+    'groupId': string;
   }
   interface WebMap {
     'address': string;
@@ -78,7 +78,7 @@ declare namespace LocalJSX {
     'layers'?: string;
   }
   interface MapGallery {
-    'id'?: string;
+    'groupId'?: string;
   }
   interface WebMap {
     'address'?: string;

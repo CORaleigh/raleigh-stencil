@@ -5,7 +5,7 @@ import { loadModules } from 'esri-loader';
     styleUrl: 'map-gallery.scss'
 })
 export class MapGallery {
-    @Prop() id: string;
+    @Prop() groupId: string;
     @State() items: any[] = [];
     initializeMap() {
         loadModules(['esri/portal/Portal']).then(([Portal]) =>
@@ -13,7 +13,7 @@ export class MapGallery {
             const portal = new Portal();
             portal.load().then(() =>
             {
-                portal.queryGroups({query:"id:"+this.id}).then(result =>
+                portal.queryGroups({query:"id:"+this.groupId}).then(result =>
                     {
                         if (result.results.length) {
                             let group = result.results[0];
