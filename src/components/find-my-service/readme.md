@@ -1,4 +1,4 @@
-# my-component
+# find-my-service
 
 
 
@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property | Attribute | Description     | Type     | Default     | Notes     |
+| -------- | --------- | --------------- | -------- | ----------- | -------- |
+| `categories`  | `categories`   | categories to display  | `string` | `undefined` | referrer to web map names here: https://ral.maps.arcgis.com/home/group.html?id=a8acaca3d4514d40bc7f302a8db291fb |
+| `layers`   | `layers`    | layers to display   | `string` | `undefined` | referrer to layer names in maps here: https://ral.maps.arcgis.com/home/group.html?id=a8acaca3d4514d40bc7f302a8db291fb |
 
 
 ----------------------------------------------
