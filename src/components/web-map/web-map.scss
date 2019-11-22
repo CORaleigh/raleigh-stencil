@@ -4,6 +4,26 @@
     width: 100%;
   }
   
+  .list-mode {
+    max-height: 50%;
+    overflow: auto;
+
+  }  
+
+@media only screen and (min-width: 800px) {
+  .list-mode.list {
+    max-height: 100%;
+    max-width: 400px;
+    overflow: auto;
+    float: left;
+  }  
+  .list-mode.map {
+    max-height: 100%;
+    max-width: calc(100% - 400px);
+    overflow: auto;
+    float: left;
+  }    
+}
 
   :host {
     position: absolute;

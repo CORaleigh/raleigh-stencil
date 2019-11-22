@@ -51,8 +51,14 @@ export class WebMap {
     //the coordinates to center the map to (-78.5555,35.55555)
     @Prop() center: string;
     //load widgets in dark mode (true or false)
-    @Prop() dark: boolean = false;
+    @Prop() darkMode: boolean = false;
+
+    @Prop() list: boolean = false;
+    
+
     @State() divId:string = "";
+    @State() features:any[] = [];
+    mapView:esri.MapView;
     async initializeMap() {
         try {
             const [WebMap, Map, MapView] = await loadModules([
@@ -251,6 +257,8 @@ query(mapView) {
                     if (this.popup) {
                         mapView.popup.open({features:result.features});
                     }
+                    debugger
+                    this.features = [...result.features];
                 }
             });
         }
@@ -258,10 +266,11 @@ query(mapView) {
 }  
 componentDidLoad() {
     this.divId = this.getRandomString();
-    if (this.dark) {
+    if (this.darkMode) {
         loadCss('https://js.arcgis.com/4.13/esri/themes/dark/main.css');
     }
     this.initializeMap().then((mapView => {
+        this.mapView = mapView;
         mapView.ui.remove('zoom');
         if (this.zoom && !this.querylayer) {
             mapView.zoom = this.zoom;
@@ -286,7 +295,29 @@ componentDidLoad() {
         }  
     }));
 }
+loadFeatureWidget(id, feature) {
+
+    loadModules(['esri/widgets/Feature']).then(([Feature]) => {
+
+        setTimeout(() => {
+            let widget = new Feature({ container: id });
+            widget.graphic = feature;
+        },200) ;        
+
+    });
+}
+featureClicked = (feature) => {
+    debugger
+    this.mapView.goTo(feature);
+}
 render() {
-    return <div id={this.divId}></div>;
+    return <div class="container"><div class={(this.list) ? 'list-mode map':''} id={this.divId}></div>
+            <div class={(this.list) ? 'list-mode list':''} >
+            {this.features.map(feature => {
+                return <div onClick={() => {this.featureClicked(feature)}} id={this.divId + '_list_'+feature.attributes['OBJECTID']}>{this.loadFeatureWidget(this.divId + '_list_'+feature.attributes['OBJECTID'], feature)}</div>
+            })}
+            </div>
+
+    </div>
 }
 }

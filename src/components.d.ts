@@ -18,19 +18,49 @@ export namespace Components {
   interface MapGallery {
     'groupId': string;
   }
+  interface TransitMap {
+    'map': string;
+    'route': string;
+  }
   interface WebMap {
     'address': string;
     'basemap': string;
     'basemapselect': boolean;
     'center': string;
     'collapsewidgets': boolean;
-    'dark': boolean;
+    'darkMode': boolean;
     'dockposition': string;
     'expandedwidget': string;
     'filter': boolean;
     'highlight': boolean;
     'layerlist': boolean;
     'legend': boolean;
+    'list': boolean;
+    'mapId': string;
+    'navigate': boolean;
+    'popup': boolean;
+    'popupdocked': boolean;
+    'querylayer': string;
+    'querywhere': string;
+    'scene': boolean;
+    'sceneId': string;
+    'search': boolean;
+    'zoom': number;
+  }
+  interface WebMap {
+    'address': string;
+    'basemap': string;
+    'basemapselect': boolean;
+    'center': string;
+    'collapsewidgets': boolean;
+    'darkMode': boolean;
+    'dockposition': string;
+    'expandedwidget': string;
+    'filter': boolean;
+    'highlight': boolean;
+    'layerlist': boolean;
+    'legend': boolean;
+    'list': boolean;
     'mapId': string;
     'navigate': boolean;
     'popup': boolean;
@@ -59,6 +89,18 @@ declare global {
     new (): HTMLMapGalleryElement;
   };
 
+  interface HTMLTransitMapElement extends Components.TransitMap, HTMLStencilElement {}
+  var HTMLTransitMapElement: {
+    prototype: HTMLTransitMapElement;
+    new (): HTMLTransitMapElement;
+  };
+
+  interface HTMLWebMapElement extends Components.WebMap, HTMLStencilElement {}
+  var HTMLWebMapElement: {
+    prototype: HTMLWebMapElement;
+    new (): HTMLWebMapElement;
+  };
+
   interface HTMLWebMapElement extends Components.WebMap, HTMLStencilElement {}
   var HTMLWebMapElement: {
     prototype: HTMLWebMapElement;
@@ -67,6 +109,8 @@ declare global {
   interface HTMLElementTagNameMap {
     'find-my-service': HTMLFindMyServiceElement;
     'map-gallery': HTMLMapGalleryElement;
+    'transit-map': HTMLTransitMapElement;
+    'web-map': HTMLWebMapElement;
     'web-map': HTMLWebMapElement;
   }
 }
@@ -80,19 +124,49 @@ declare namespace LocalJSX {
   interface MapGallery {
     'groupId'?: string;
   }
+  interface TransitMap {
+    'map'?: string;
+    'route'?: string;
+  }
   interface WebMap {
     'address'?: string;
     'basemap'?: string;
     'basemapselect'?: boolean;
     'center'?: string;
     'collapsewidgets'?: boolean;
-    'dark'?: boolean;
+    'darkMode'?: boolean;
     'dockposition'?: string;
     'expandedwidget'?: string;
     'filter'?: boolean;
     'highlight'?: boolean;
     'layerlist'?: boolean;
     'legend'?: boolean;
+    'list'?: boolean;
+    'mapId'?: string;
+    'navigate'?: boolean;
+    'popup'?: boolean;
+    'popupdocked'?: boolean;
+    'querylayer'?: string;
+    'querywhere'?: string;
+    'scene'?: boolean;
+    'sceneId'?: string;
+    'search'?: boolean;
+    'zoom'?: number;
+  }
+  interface WebMap {
+    'address'?: string;
+    'basemap'?: string;
+    'basemapselect'?: boolean;
+    'center'?: string;
+    'collapsewidgets'?: boolean;
+    'darkMode'?: boolean;
+    'dockposition'?: string;
+    'expandedwidget'?: string;
+    'filter'?: boolean;
+    'highlight'?: boolean;
+    'layerlist'?: boolean;
+    'legend'?: boolean;
+    'list'?: boolean;
     'mapId'?: string;
     'navigate'?: boolean;
     'popup'?: boolean;
@@ -108,6 +182,8 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'find-my-service': FindMyService;
     'map-gallery': MapGallery;
+    'transit-map': TransitMap;
+    'web-map': WebMap;
     'web-map': WebMap;
   }
 }
@@ -120,6 +196,8 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'find-my-service': LocalJSX.FindMyService & JSXBase.HTMLAttributes<HTMLFindMyServiceElement>;
       'map-gallery': LocalJSX.MapGallery & JSXBase.HTMLAttributes<HTMLMapGalleryElement>;
+      'transit-map': LocalJSX.TransitMap & JSXBase.HTMLAttributes<HTMLTransitMapElement>;
+      'web-map': LocalJSX.WebMap & JSXBase.HTMLAttributes<HTMLWebMapElement>;
       'web-map': LocalJSX.WebMap & JSXBase.HTMLAttributes<HTMLWebMapElement>;
     }
   }

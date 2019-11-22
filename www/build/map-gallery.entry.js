@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './core-ac2e091d.js';
+import { r as registerInstance, h } from './core-8193746a.js';
 import { e as esriLoader_3 } from './esri-loader-24201da0.js';
 
 const MapGallery = class {

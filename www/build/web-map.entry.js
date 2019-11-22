@@ -1,4 +1,4 @@
-import { r as registerInstance, h, c as getElement } from './core-ac2e091d.js';
+import { r as registerInstance, h, c as getElement } from './core-8193746a.js';
 import { e as esriLoader_3, a as esriLoader_5 } from './esri-loader-24201da0.js';
 
 const WebMap = class {
@@ -29,8 +29,10 @@ const WebMap = class {
         //collapse widgets in upper right corner (true or false)
         this.collapsewidgets = true;
         //load widgets in dark mode (true or false)
-        this.dark = false;
+        this.darkMode = false;
+        this.list = false;
         this.divId = "";
+        this.features = [];
         this.getRandomString = function () {
             var x = 2147483648;
             return Math.floor(Math.random() * x).toString(36) +
@@ -108,6 +110,10 @@ const WebMap = class {
             mapView.on("drag", ["Shift", "Control"], function (event) {
                 event.stopPropagation();
             });
+        };
+        this.featureClicked = (feature) => {
+            debugger;
+            this.mapView.goTo(feature);
         };
     }
     async initializeMap() {
@@ -239,6 +245,8 @@ const WebMap = class {
                         if (this.popup) {
                             mapView.popup.open({ features: result.features });
                         }
+                        debugger;
+                        this.features = [...result.features];
                     }
                 });
             }
@@ -246,10 +254,11 @@ const WebMap = class {
     }
     componentDidLoad() {
         this.divId = this.getRandomString();
-        if (this.dark) {
+        if (this.darkMode) {
             esriLoader_5('https://js.arcgis.com/4.13/esri/themes/dark/main.css');
         }
         this.initializeMap().then((mapView => {
+            this.mapView = mapView;
             mapView.ui.remove('zoom');
             if (this.zoom && !this.querylayer) {
                 mapView.zoom = this.zoom;
@@ -274,11 +283,21 @@ const WebMap = class {
             }
         }));
     }
+    loadFeatureWidget(id, feature) {
+        esriLoader_3(['esri/widgets/Feature']).then(([Feature]) => {
+            setTimeout(() => {
+                let widget = new Feature({ container: id });
+                widget.graphic = feature;
+            }, 200);
+        });
+    }
     render() {
-        return h("div", { id: this.divId });
+        return h("div", { class: "container" }, h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }), h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(feature => {
+            return h("div", { onClick: () => { this.featureClicked(feature); }, id: this.divId + '_list_' + feature.attributes['OBJECTID'] }, this.loadFeatureWidget(this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
+        })));
     }
     get element() { return getElement(this); }
-    static get style() { return "\@import url(\"https://js.arcgis.com/4.13/esri/themes/light/main.css\");\n.esri-view {\n  height: 100%;\n  width: 100%;\n}\n\n:host {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n}\n\nhtml, body, .container {\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  font-family: sans-serif;\n}"; }
+    static get style() { return "\@import url(\"https://js.arcgis.com/4.13/esri/themes/light/main.css\");\n.esri-view {\n  height: 100%;\n  width: 100%;\n}\n\n.list-mode {\n  max-height: 50%;\n  overflow: auto;\n}\n\n\@media only screen and (min-width: 800px) {\n  .list-mode.list {\n    max-height: 100%;\n    max-width: 400px;\n    overflow: auto;\n    float: left;\n  }\n\n  .list-mode.map {\n    max-height: 100%;\n    max-width: calc(100% - 400px);\n    overflow: auto;\n    float: left;\n  }\n}\n:host {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n}\n\nhtml, body, .container {\n  height: 100%;\n  width: 100%;\n  margin: 0;\n  font-family: sans-serif;\n}"; }
 };
 
 export { WebMap as web_map };
