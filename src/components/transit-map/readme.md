@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     | Example     |
-| -------- | --------- | --------------- | -------- | ----------- | ----------- |
-| `route`  | `route`   | route ID | `string` | `undefined` | 1 |
-
-
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `map`    | `map`     |             | `string` | `undefined` |
+| `route`  | `route`   |             | `string` | `undefined` |
 
 
 ----------------------------------------------

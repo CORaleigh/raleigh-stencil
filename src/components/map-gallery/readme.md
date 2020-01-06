@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `groupId`  | `group-id`   | Group ID from ArcGIS Online  | `string` | `undefined` |
+| Property  | Attribute  | Description | Type     | Default     |
+| --------- | ---------- | ----------- | -------- | ----------- |
+| `groupId` | `group-id` |             | `string` | `undefined` |
 
 
 ----------------------------------------------

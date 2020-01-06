@@ -47,31 +47,6 @@ export namespace Components {
     'search': boolean;
     'zoom': number;
   }
-  interface WebMap {
-    'address': string;
-    'basemap': string;
-    'basemapselect': boolean;
-    'center': string;
-    'collapsewidgets': boolean;
-    'darkMode': boolean;
-    'dockposition': string;
-    'expandedwidget': string;
-    'filter': boolean;
-    'highlight': boolean;
-    'layerlist': boolean;
-    'legend': boolean;
-    'list': boolean;
-    'mapId': string;
-    'navigate': boolean;
-    'popup': boolean;
-    'popupdocked': boolean;
-    'querylayer': string;
-    'querywhere': string;
-    'scene': boolean;
-    'sceneId': string;
-    'search': boolean;
-    'zoom': number;
-  }
 }
 
 declare global {
@@ -100,17 +75,10 @@ declare global {
     prototype: HTMLWebMapElement;
     new (): HTMLWebMapElement;
   };
-
-  interface HTMLWebMapElement extends Components.WebMap, HTMLStencilElement {}
-  var HTMLWebMapElement: {
-    prototype: HTMLWebMapElement;
-    new (): HTMLWebMapElement;
-  };
   interface HTMLElementTagNameMap {
     'find-my-service': HTMLFindMyServiceElement;
     'map-gallery': HTMLMapGalleryElement;
     'transit-map': HTMLTransitMapElement;
-    'web-map': HTMLWebMapElement;
     'web-map': HTMLWebMapElement;
   }
 }
@@ -153,37 +121,11 @@ declare namespace LocalJSX {
     'search'?: boolean;
     'zoom'?: number;
   }
-  interface WebMap {
-    'address'?: string;
-    'basemap'?: string;
-    'basemapselect'?: boolean;
-    'center'?: string;
-    'collapsewidgets'?: boolean;
-    'darkMode'?: boolean;
-    'dockposition'?: string;
-    'expandedwidget'?: string;
-    'filter'?: boolean;
-    'highlight'?: boolean;
-    'layerlist'?: boolean;
-    'legend'?: boolean;
-    'list'?: boolean;
-    'mapId'?: string;
-    'navigate'?: boolean;
-    'popup'?: boolean;
-    'popupdocked'?: boolean;
-    'querylayer'?: string;
-    'querywhere'?: string;
-    'scene'?: boolean;
-    'sceneId'?: string;
-    'search'?: boolean;
-    'zoom'?: number;
-  }
 
   interface IntrinsicElements {
     'find-my-service': FindMyService;
     'map-gallery': MapGallery;
     'transit-map': TransitMap;
-    'web-map': WebMap;
     'web-map': WebMap;
   }
 }
@@ -197,7 +139,6 @@ declare module "@stencil/core" {
       'find-my-service': LocalJSX.FindMyService & JSXBase.HTMLAttributes<HTMLFindMyServiceElement>;
       'map-gallery': LocalJSX.MapGallery & JSXBase.HTMLAttributes<HTMLMapGalleryElement>;
       'transit-map': LocalJSX.TransitMap & JSXBase.HTMLAttributes<HTMLTransitMapElement>;
-      'web-map': LocalJSX.WebMap & JSXBase.HTMLAttributes<HTMLWebMapElement>;
       'web-map': LocalJSX.WebMap & JSXBase.HTMLAttributes<HTMLWebMapElement>;
     }
   }

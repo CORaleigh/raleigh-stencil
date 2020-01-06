@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "components\\map-gallery\\map-gallery.js",
+    "components\\web-map\\web-map.js",
+    "components\\find-my-service\\find-my-service.js",
+    "components\\transit-map\\transit-map.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.8.1",
+    "typescriptVersion": "3.7.2"
+  },
+  "collections": [],
+  "bundles": []
+}

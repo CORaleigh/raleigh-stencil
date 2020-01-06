@@ -1,0 +1,16 @@
+@import url("https://js.arcgis.com/4.13/esri/themes/light/main.css");
+body, html, .container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.esri-view {
+  height: 50%;
+  width: 100%;
+}
+
+.stops {
+  height: 50%;
+}
