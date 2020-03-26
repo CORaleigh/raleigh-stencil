@@ -312,7 +312,7 @@ const TransitMap = class {
     }
     render() {
         return (h("div", { class: "container" }, h("div", { id: "viewDiv" }), h("ol", { class: "stops o-layout-grid o-layout-grid--4" }, this.vehicles.map(vehicle => {
-            return vehicle.arrival_estimates.length ? h("li", { class: "o-layout-grid__item" }, h("div", null, h("h3", { "data-code": vehicle.vehicle_id, onClick: ev => this.zoomToBus(ev) }, "Bus ", vehicle.call_name), h("div", null, vehicle.arrival_estimates.map(est => {
+            return vehicle.arrival_estimates.length ? h("li", { class: "o-layout-grid__item" }, h("div", null, h("h3", { "data-code": vehicle.vehicle_id, onClick: ev => this.zoomToBus(ev) }, "Bus ", vehicle.call_name), h("div", null, vehicle.arrival_estimates.slice(0, 3).map(est => {
                 return h("div", { onMouseOver: ev => this.highlightStop(ev), onClick: ev => this.zoomToStop(ev) }, h("h5", { "data-code": est.stop_code }, est.stop_name), h("div", { "data-code": est.stop_code }, "Arriving in approximately ", est.arriving_label));
             })))) : h("div", null);
         }))));

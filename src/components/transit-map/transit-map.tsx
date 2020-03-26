@@ -340,7 +340,7 @@ export class TransitMap {
         <ol class="stops o-layout-grid o-layout-grid--4">
             {this.vehicles.map(vehicle => {
                 return vehicle.arrival_estimates.length ? <li class="o-layout-grid__item"><div><h3 data-code={vehicle.vehicle_id} onClick={ev => this.zoomToBus(ev)}>Bus {vehicle.call_name}</h3><div>
-                    {vehicle.arrival_estimates.map(est => {
+                    {vehicle.arrival_estimates.slice(0,3).map(est => {
                         return <div onMouseOver={ev => this.highlightStop(ev)}  onClick={ev => this.zoomToStop(ev)}>
                         <h5 data-code={est.stop_code}>{est.stop_name}</h5>
                         <div data-code={est.stop_code}>Arriving in approximately {est.arriving_label}</div>

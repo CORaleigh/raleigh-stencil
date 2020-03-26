@@ -317,7 +317,7 @@ export class TransitMap {
                         h("h3", { "data-code": vehicle.vehicle_id, onClick: ev => this.zoomToBus(ev) },
                             "Bus ",
                             vehicle.call_name),
-                        h("div", null, vehicle.arrival_estimates.map(est => {
+                        h("div", null, vehicle.arrival_estimates.slice(0, 3).map(est => {
                             return h("div", { onMouseOver: ev => this.highlightStop(ev), onClick: ev => this.zoomToStop(ev) },
                                 h("h5", { "data-code": est.stop_code }, est.stop_name),
                                 h("div", { "data-code": est.stop_code },

@@ -417,7 +417,7 @@ var TransitMap = /** @class */ (function () {
     class_1.prototype.render = function () {
         var _this = this;
         return (h("div", { class: "container" }, h("div", { id: "viewDiv" }), h("ol", { class: "stops o-layout-grid o-layout-grid--4" }, this.vehicles.map(function (vehicle) {
-            return vehicle.arrival_estimates.length ? h("li", { class: "o-layout-grid__item" }, h("div", null, h("h3", { "data-code": vehicle.vehicle_id, onClick: function (ev) { return _this.zoomToBus(ev); } }, "Bus ", vehicle.call_name), h("div", null, vehicle.arrival_estimates.map(function (est) {
+            return vehicle.arrival_estimates.length ? h("li", { class: "o-layout-grid__item" }, h("div", null, h("h3", { "data-code": vehicle.vehicle_id, onClick: function (ev) { return _this.zoomToBus(ev); } }, "Bus ", vehicle.call_name), h("div", null, vehicle.arrival_estimates.slice(0, 3).map(function (est) {
                 return h("div", { onMouseOver: function (ev) { return _this.highlightStop(ev); }, onClick: function (ev) { return _this.zoomToStop(ev); } }, h("h5", { "data-code": est.stop_code }, est.stop_name), h("div", { "data-code": est.stop_code }, "Arriving in approximately ", est.arriving_label));
             })))) : h("div", null);
         }))));
