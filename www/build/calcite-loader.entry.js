@@ -1,0 +1,57 @@
+import { r as registerInstance, h, H as Host, d as getElement } from './core-17370b86.js';
+import { g as guid } from './guid-8a4914c4.js';
+
+const CalciteLoader = class {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+        //--------------------------------------------------------------------------
+        //
+        //  Properties
+        //
+        //--------------------------------------------------------------------------
+        /** Show the loader */
+        this.isActive = false;
+        /** Inline loaders are smaller and will appear to the left of the text */
+        this.inline = false;
+        /** Percent complete of 100, only valid for determinate indicators */
+        this.value = 0;
+        /** Text which should appear under the loading indicator (optional) */
+        this.text = "";
+        //--------------------------------------------------------------------------
+        //
+        //  Private State/Props
+        //
+        //--------------------------------------------------------------------------
+        /** @internal */
+        this.guid = `calcite-loader-${guid()}`;
+    }
+    //--------------------------------------------------------------------------
+    //
+    //  Lifecycle
+    //
+    //--------------------------------------------------------------------------
+    render() {
+        const id = this.el.id || this.guid;
+        const size = this.inline ? 20 : 56;
+        const radius = this.inline ? 9 : 25;
+        const viewbox = `0 0 ${size} ${size}`;
+        const isDeterminate = this.type === "determinate";
+        const circumference = 2 * radius * Math.PI;
+        const progress = (this.value / 100) * circumference;
+        const remaining = circumference - progress;
+        const value = Math.floor(this.value);
+        const hostAttributes = {
+            "aria-valuenow": value,
+            "aria-valuemin": 0,
+            "aria-valuemax": 100,
+            complete: value === 100
+        };
+        const svgAttributes = { r: radius, cx: size / 2, cy: size / 2 };
+        const determinateStyle = { "stroke-dasharray": `${progress} ${remaining}` };
+        return (h(Host, Object.assign({ id: id, role: "progressbar" }, (isDeterminate ? hostAttributes : {})), h("div", { class: "loader__svgs" }, h("svg", { viewBox: viewbox, class: "loader__svg loader__svg--1" }, h("circle", Object.assign({}, svgAttributes))), h("svg", { viewBox: viewbox, class: "loader__svg loader__svg--2" }, h("circle", Object.assign({}, svgAttributes))), h("svg", Object.assign({ viewBox: viewbox, class: "loader__svg loader__svg--3" }, (isDeterminate ? { style: determinateStyle } : {})), h("circle", Object.assign({}, svgAttributes)))), this.text && h("div", { class: "loader__text" }, this.text), isDeterminate && h("div", { class: "loader__percentage" }, value)));
+    }
+    get el() { return getElement(this); }
+    static get style() { return "\@charset \"UTF-8\";\n:host([hidden]) {\n  display: none;\n}\n\n/**\n  Segment variables\n  - size      length of the segment (0 - 100)\n  - growth    how much the segment grows during the animation\n              (size + growth should not exceed 100)\n  - duration  how long the segment takes to rotate 360° (seconds)\n*/\n:host {\n  position: relative;\n  display: none;\n  padding-bottom: 4rem;\n  padding-top: 4rem;\n  margin-left: auto;\n  margin-right: auto;\n  min-height: 56px;\n  stroke: var(--calcite-ui-blue-1);\n  stroke-width: 3;\n  fill: none;\n  opacity: 1;\n  -webkit-transform: scale(1, 1);\n  transform: scale(1, 1);\n  animation: loader-color-shift 6s alternate-reverse infinite linear;\n}\n\n:host([no-padding]) {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n\n:host([is-active]) {\n  display: block;\n}\n\n.loader__text {\n  display: block;\n  margin-top: 5rem;\n  text-align: center;\n  font-size: 0.875rem;\n  line-height: 1.5;\n}\n\n.loader__percentage {\n  display: block;\n  width: 56px;\n  position: absolute;\n  top: 4rem;\n  left: 50%;\n  margin-left: -28px;\n  margin-top: 28px;\n  text-align: center;\n  font-size: 0.875rem;\n  color: var(--calcite-ui-text-1);\n  line-height: 0.25;\n  -webkit-transform: scale(1, 1);\n  transform: scale(1, 1);\n}\n\n.loader__svgs {\n  width: 56px;\n  height: 56px;\n  position: absolute;\n  top: 4rem;\n  left: 50%;\n  margin-left: -28px;\n  overflow: visible;\n  opacity: 1;\n  -webkit-transform: scale(1, 1);\n  transform: scale(1, 1);\n}\n\n.loader__svg {\n  width: 56px;\n  height: 56px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  overflow: visible;\n  -webkit-transform-origin: center;\n  transform-origin: center;\n  -webkit-animation-iteration-count: infinite;\n  animation-iteration-count: infinite;\n  -webkit-animation-timing-function: linear;\n  animation-timing-function: linear;\n  -webkit-animation-name: loader-clockwise;\n  animation-name: loader-clockwise;\n}\n\n\@supports (display: grid) {\n  .loader__svg--1 {\n    -webkit-animation-name: loader-offset-1;\n    animation-name: loader-offset-1;\n  }\n\n  .loader__svg--2 {\n    -webkit-animation-name: loader-offset-2;\n    animation-name: loader-offset-2;\n  }\n\n  .loader__svg--3 {\n    -webkit-animation-name: loader-offset-3;\n    animation-name: loader-offset-3;\n  }\n}\n:host([type=determinate]) {\n  stroke: var(--calcite-ui-border-3);\n  -webkit-animation: none;\n  animation: none;\n}\n:host([type=determinate]) .loader__svg--3 {\n  stroke: var(--calcite-ui-blue-1);\n  stroke-dasharray: 157.0795;\n  -webkit-transform: rotate(-90deg);\n  transform: rotate(-90deg);\n  -webkit-animation: none;\n  animation: none;\n  -webkit-transition: all 100ms linear;\n  transition: all 100ms linear;\n}\n\n:host([inline]) {\n  stroke: currentColor;\n  stroke-width: 2;\n  -webkit-animation: none;\n  animation: none;\n  margin: 0;\n  padding-bottom: 0;\n  padding-top: 0;\n  position: relative;\n  height: 20px;\n  min-height: 20px;\n  width: 20px;\n  margin-right: 10px;\n  vertical-align: -4px;\n}\n\n:host([inline][dir=rtl]) {\n  margin-left: 10px;\n  margin-right: 0;\n}\n\n:host([is-active][inline]) {\n  display: inline-block;\n}\n\n:host([inline]) .loader__svgs {\n  top: 0;\n  left: 0;\n  margin: 0;\n  width: 20px;\n  height: 20px;\n}\n\n:host([inline]) .loader__svg {\n  width: 20px;\n  height: 20px;\n}\n\n:host([complete]) {\n  opacity: 0;\n  -webkit-transform: scale(0.75, 0.75);\n  transform: scale(0.75, 0.75);\n  -webkit-transform-origin: center;\n  transform-origin: center;\n  -webkit-transition: opacity 200ms linear 1000ms, -webkit-transform 200ms linear 1000ms;\n  transition: opacity 200ms linear 1000ms, -webkit-transform 200ms linear 1000ms;\n  transition: opacity 200ms linear 1000ms, transform 200ms linear 1000ms;\n  transition: opacity 200ms linear 1000ms, transform 200ms linear 1000ms, -webkit-transform 200ms linear 1000ms;\n}\n\n:host([complete]) .loader__svgs {\n  opacity: 0;\n  -webkit-transform: scale(0.75, 0.75);\n  transform: scale(0.75, 0.75);\n  -webkit-transform-origin: center;\n  transform-origin: center;\n  -webkit-transition: opacity 180ms linear 800ms, -webkit-transform 180ms linear 800ms;\n  transition: opacity 180ms linear 800ms, -webkit-transform 180ms linear 800ms;\n  transition: opacity 180ms linear 800ms, transform 180ms linear 800ms;\n  transition: opacity 180ms linear 800ms, transform 180ms linear 800ms, -webkit-transform 180ms linear 800ms;\n}\n\n:host([complete]) .loader__percentage {\n  color: var(--calcite-ui-blue-1);\n  -webkit-transform: scale(1.075, 1.075);\n  transform: scale(1.075, 1.075);\n  -webkit-transform-origin: center;\n  transform-origin: center;\n  -webkit-transition: color 200ms linear, -webkit-transform 200ms linear;\n  transition: color 200ms linear, -webkit-transform 200ms linear;\n  transition: color 200ms linear, transform 200ms linear;\n  transition: color 200ms linear, transform 200ms linear, -webkit-transform 200ms linear;\n}\n\n.loader__svg--1 {\n  stroke-dasharray: 28.0499107143% 140.2495535714%;\n  -webkit-animation-duration: 0.72s;\n  animation-duration: 0.72s;\n}\n\n\@-webkit-keyframes loader-offset-1 {\n  0% {\n    stroke-dasharray: 28.0499107143% 252.4491964286%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -84.1497321429%;\n  }\n  100% {\n    stroke-dasharray: 28.0499107143% 252.4491964286%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n\n\@keyframes loader-offset-1 {\n  0% {\n    stroke-dasharray: 28.0499107143% 252.4491964286%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -84.1497321429%;\n  }\n  100% {\n    stroke-dasharray: 28.0499107143% 252.4491964286%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n.loader__svg--2 {\n  stroke-dasharray: 56.0998214286% 140.2495535714%;\n  -webkit-animation-duration: 0.96s;\n  animation-duration: 0.96s;\n}\n\n\@-webkit-keyframes loader-offset-2 {\n  0% {\n    stroke-dasharray: 56.0998214286% 224.3992857143%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -98.1746875%;\n  }\n  100% {\n    stroke-dasharray: 56.0998214286% 224.3992857143%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n\n\@keyframes loader-offset-2 {\n  0% {\n    stroke-dasharray: 56.0998214286% 224.3992857143%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -98.1746875%;\n  }\n  100% {\n    stroke-dasharray: 56.0998214286% 224.3992857143%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n.loader__svg--3 {\n  stroke-dasharray: 14.0249553571% 140.2495535714%;\n  -webkit-animation-duration: 1.16s;\n  animation-duration: 1.16s;\n}\n\n\@-webkit-keyframes loader-offset-3 {\n  0% {\n    stroke-dasharray: 14.0249553571% 266.4741517857%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -77.1372544643%;\n  }\n  100% {\n    stroke-dasharray: 14.0249553571% 266.4741517857%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n\n\@keyframes loader-offset-3 {\n  0% {\n    stroke-dasharray: 14.0249553571% 266.4741517857%;\n    stroke-dashoffset: 0;\n  }\n  50% {\n    stroke-dasharray: 140.2495535714% 140.2495535714%;\n    stroke-dashoffset: -77.1372544643%;\n  }\n  100% {\n    stroke-dasharray: 14.0249553571% 266.4741517857%;\n    stroke-dashoffset: -280.4991071429%;\n  }\n}\n\@-webkit-keyframes loader-color-shift {\n  0% {\n    stroke: var(--calcite-ui-blue-1);\n  }\n  33% {\n    stroke: var(--calcite-ui-blue-3);\n  }\n  66% {\n    stroke: var(--calcite-ui-blue-2);\n  }\n  100% {\n    stroke: var(--calcite-ui-blue-1);\n  }\n}\n\@keyframes loader-color-shift {\n  0% {\n    stroke: var(--calcite-ui-blue-1);\n  }\n  33% {\n    stroke: var(--calcite-ui-blue-3);\n  }\n  66% {\n    stroke: var(--calcite-ui-blue-2);\n  }\n  100% {\n    stroke: var(--calcite-ui-blue-1);\n  }\n}\n\@-webkit-keyframes loader-clockwise {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\@keyframes loader-clockwise {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}"; }
+};
+
+export { CalciteLoader as calcite_loader };

@@ -1,0 +1,190 @@
+@import url("https://js.arcgis.com/4.13/esri/themes/light/main.css");
+@import "node_modules/calcite-web/dist/sass/calcite-web";
+input[type=text] {
+    float: left;
+    width: 80px;
+}
+input[type=range] {
+    float: right;
+    width: calc(100% - 80px - 1em);
+}
+
+
+@media (max-width: 37.5em){
+    input[type=text] {
+        float: none;
+        width: 80px;
+    }
+    input[type=range] {
+        float: none;
+        width: 100%;
+    }
+}
+
+input:hover{
+    border-color: #046A38 !important;
+}
+form {
+    margin-bottom: 3em;
+}
+label {
+    margin: 0;
+}
+// table, th, td {
+//     border: 1px solid black;
+//   }
+td.slider, th.slider {
+    width: 75%;
+    text-align: left;
+}
+
+td, th {
+    width: 12.5%;
+    text-align: center;
+}
+table{
+    width: 100%;
+}
+#waterUsage {
+    margin: 0 1em 0 1em;
+}
+// body, html{
+//     width: 100%;
+//     color: #333;
+//     font-family: "Merriweather", serif !important;
+//     padding: 1em;
+    
+// }
+
+// input, textarea {
+//     font-size: 0.88889rem !important;
+//     border: 1px solid #999 !important;
+//     border-top-color: #333 !important;
+//     max-width: 100% !important;
+//     padding: 0.5rem 0.66667rem !important;
+//     -webkit-transition: all .2s ease-out !important;
+//     transition: all .2s ease-out !important;
+// }
+
+// input:focus, textarea:focus {
+//     line-height: 22px !important;
+// }
+// .esri-search__input-container {
+//     height: 100% !important;
+// }
+
+// @media (min-width: 37.5em) {
+// input, textarea {
+//     font-size: 0.77778rem !important;
+// }
+// }
+
+// @media (min-width: 37.5em) {
+// input, textarea {
+//     padding: 0.66667rem 1rem !important;
+// }
+// }
+
+// button, input, optgroup, select, textarea {
+//     color: inherit !important;
+//     font: inherit !important;
+//     margin: 0 !important;
+//     font-size: 1rem !important;
+//     color: #333 !important;
+//     font-family: "Merriweather", serif !important;
+//     width: 100%;
+// }
+
+// .esri-search {
+//     width: 100% !important;
+//     flex-flow: row nowrap !important;
+//     justify-content: center !important;
+//     align-items: center !important;
+//     overflow: visible !important;
+//     line-height: 22px !important;
+//     -webkit-transition: none !important;
+//     transition: none !important;
+
+// }
+
+// .esri-search__submit-button  {
+//     background-color: #4C8C2B !important;
+//     border: 1px solid #4C8C2B !important;
+//     color: #fff !important;
+//     font-size: 0.83333rem !important;
+//     font-family: "Typold W05", sans-serif !important;
+//     font-weight: 500 !important;
+//     letter-spacing: .1em !important;
+//     line-height: 1rem !important;
+//     padding: 0.5rem 0.66667rem !important;
+//     text-transform: uppercase !important;
+//     height: 50px !important;
+//     width: 120px !important;
+// }
+
+// .esri-input[type="text"] {
+//     border: none !important;
+//     flex-flow: row nowrap !important;
+//     justify-content: center !important;
+//     align-items: center !important;
+//     overflow: visible !important;
+//     padding: 12px 18px !important;
+    
+//     -webkit-transition: none !important;
+//     transition: none !important;
+//     height: 48px !important;
+// }
+
+// .esri-input[type="text"]:focus-within {
+//     -webkit-box-shadow: none !important;
+//     box-shadow: none !important;
+//     outline: none;
+// }
+
+// .esri-search__input-container{
+//     border-top-color: #333 !important;  
+//     border: 1px solid #999 !important;
+// }
+
+// .esri-search__input-container:focus-within{
+// border-color: #01426A !important;
+// -webkit-box-shadow: 0 1px 5px 2px rgba(1, 66, 106, 0.25) !important;
+// box-shadow: 0 1px 5px 2px rgba(1, 66, 106, 0.25) !important;
+// outline: none !important;
+// }
+
+// .esri-menu__list-item {
+//     color: #333;
+//     font-family: "Merriweather", serif !important;
+// }
+
+// .esri-icon-search:before  {
+//     content: 'SEARCH' !important;
+//     background-color: #4C8C2B;
+//     border: 1px solid #4C8C2B;
+//     color: #fff;
+//     font-size: 0.83333rem;
+//     font-family: "Typold W05", sans-serif;
+//     font-weight: 500;
+//     letter-spacing: .1em;
+//     line-height: 1rem;
+//     padding: 0.5rem 0.66667rem;
+//     text-transform: uppercase;
+// }
+
+// .esri-feature {
+// background: none !important;
+// font-family: "Merriweather", serif !important;
+// }
+
+// @media (min-width: 37.5em) {
+// body {
+//     font-size: 1rem !important;
+// }
+// }
+// .esri-search__clear-button:hover  {
+// background: none !important;
+// }
+// .esri-icon-close {
+//     height: 100%;
+// }

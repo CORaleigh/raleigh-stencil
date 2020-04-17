@@ -22,6 +22,7 @@ export namespace Components {
     'map': string;
     'route': string;
   }
+  interface WaterUsage {}
   interface WebMap {
     'address': string;
     'basemap': string;
@@ -70,6 +71,12 @@ declare global {
     new (): HTMLTransitMapElement;
   };
 
+  interface HTMLWaterUsageElement extends Components.WaterUsage, HTMLStencilElement {}
+  var HTMLWaterUsageElement: {
+    prototype: HTMLWaterUsageElement;
+    new (): HTMLWaterUsageElement;
+  };
+
   interface HTMLWebMapElement extends Components.WebMap, HTMLStencilElement {}
   var HTMLWebMapElement: {
     prototype: HTMLWebMapElement;
@@ -79,6 +86,7 @@ declare global {
     'find-my-service': HTMLFindMyServiceElement;
     'map-gallery': HTMLMapGalleryElement;
     'transit-map': HTMLTransitMapElement;
+    'water-usage': HTMLWaterUsageElement;
     'web-map': HTMLWebMapElement;
   }
 }
@@ -96,6 +104,7 @@ declare namespace LocalJSX {
     'map'?: string;
     'route'?: string;
   }
+  interface WaterUsage {}
   interface WebMap {
     'address'?: string;
     'basemap'?: string;
@@ -126,6 +135,7 @@ declare namespace LocalJSX {
     'find-my-service': FindMyService;
     'map-gallery': MapGallery;
     'transit-map': TransitMap;
+    'water-usage': WaterUsage;
     'web-map': WebMap;
   }
 }
@@ -139,6 +149,7 @@ declare module "@stencil/core" {
       'find-my-service': LocalJSX.FindMyService & JSXBase.HTMLAttributes<HTMLFindMyServiceElement>;
       'map-gallery': LocalJSX.MapGallery & JSXBase.HTMLAttributes<HTMLMapGalleryElement>;
       'transit-map': LocalJSX.TransitMap & JSXBase.HTMLAttributes<HTMLTransitMapElement>;
+      'water-usage': LocalJSX.WaterUsage & JSXBase.HTMLAttributes<HTMLWaterUsageElement>;
       'web-map': LocalJSX.WebMap & JSXBase.HTMLAttributes<HTMLWebMapElement>;
     }
   }

@@ -1,15 +1,62 @@
 {
   "entries": [
-    "components\\map-gallery\\map-gallery.js",
-    "components\\find-my-service\\find-my-service.js",
-    "components\\web-map\\web-map.js",
-    "components\\transit-map\\transit-map.js"
+    "components/web-map/web-map.js",
+    "components/transit-map/transit-map.js",
+    "components/water-usage/water-usage.js",
+    "components/map-gallery/map-gallery.js",
+    "components/find-my-service/find-my-service.js"
   ],
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.8.1",
+    "version": "1.8.4",
     "typescriptVersion": "3.7.2"
   },
-  "collections": [],
+  "collections": [
+    {
+      "name": "@esri/calcite-components",
+      "tags": [
+        "calcite-accordion",
+        "calcite-accordion-item",
+        "calcite-alert",
+        "calcite-button",
+        "calcite-card",
+        "calcite-checkbox",
+        "calcite-chip",
+        "calcite-combobox",
+        "calcite-combobox-item",
+        "calcite-date",
+        "calcite-date-day",
+        "calcite-date-month",
+        "calcite-date-month-header",
+        "calcite-dropdown",
+        "calcite-dropdown-group",
+        "calcite-dropdown-item",
+        "calcite-example",
+        "calcite-icon",
+        "calcite-loader",
+        "calcite-modal",
+        "calcite-notice",
+        "calcite-pagination",
+        "calcite-popover",
+        "calcite-popover-manager",
+        "calcite-progress",
+        "calcite-radio-group",
+        "calcite-radio-group-item",
+        "calcite-slider",
+        "calcite-split-button",
+        "calcite-stepper",
+        "calcite-stepper-item",
+        "calcite-switch",
+        "calcite-tab",
+        "calcite-tab-nav",
+        "calcite-tab-title",
+        "calcite-tabs",
+        "calcite-tooltip",
+        "calcite-tooltip-manager",
+        "calcite-tree",
+        "calcite-tree-item"
+      ]
+    }
+  ],
   "bundles": []
 }
