@@ -1,5 +1,4 @@
 import { Component, h, State } from '@stencil/core';
-import "@esri/calcite-components";
 import { WaterUsageSlider } from './water-usage-slider';
 
 @Component({

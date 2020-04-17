@@ -1,4 +1,3 @@
-import "@esri/calcite-components";
 import { WaterUsageSlider } from './water-usage-slider';
 export declare class WaterUsage {
     shower1: WaterUsageSlider;
