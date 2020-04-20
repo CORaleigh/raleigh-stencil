@@ -64,7 +64,8 @@ export class WaterUsage {
         this.toilet = {...this.toilet, value: event.target.value, gallons:event.target.value*30.4*12};
         this.toilet = {...this.toilet, ccfunits:this.toilet.gallons/748};  
         this.teeth = {...this.teeth, gallons:event.target.value*this.teeth.value*30.4*3};
-        this.teeth = {...this.teeth, ccfunits:this.teeth.gallons/748};            
+        this.teeth = {...this.teeth, ccfunits:this.teeth.gallons/748}; 
+        this.indoor = {...this.toilet, value: event.target.value};           
     }
     teethInput(event) {
         this.teeth = {...this.teeth, value: event.target.value, gallons:event.target.value*this.toilet.value*30.4*3};
@@ -614,8 +615,8 @@ export class WaterUsage {
                         <label>
                             {this.indoor.label}
                         </label>
-                        <input type="text" value={this.indoor.value} onInput={ev=> this.indoorInput(ev)} />
-                        <input onInput={ev=> this.indoorInput(ev)} type="range" min="0" max={this.indoor.max}
+                        <input disabled type="text" value={this.indoor.value} onInput={ev=> this.indoorInput(ev)} />
+                        <input onInput={ev=> this.indoorInput(ev)} disabled type="range" min="0" max={this.indoor.max}
                         value={this.indoor.value} step="1" aria-valuemin="0" aria-valuemax={this.indoor.max}
                         aria-valuenow="0"/>
                     </form>

@@ -58,6 +58,7 @@ export class WaterUsage {
         this.toilet = Object.assign(Object.assign({}, this.toilet), { ccfunits: this.toilet.gallons / 748 });
         this.teeth = Object.assign(Object.assign({}, this.teeth), { gallons: event.target.value * this.teeth.value * 30.4 * 3 });
         this.teeth = Object.assign(Object.assign({}, this.teeth), { ccfunits: this.teeth.gallons / 748 });
+        this.indoor = Object.assign(Object.assign({}, this.toilet), { value: event.target.value });
     }
     teethInput(event) {
         this.teeth = Object.assign(Object.assign({}, this.teeth), { value: event.target.value, gallons: event.target.value * this.toilet.value * 30.4 * 3 });
@@ -339,8 +340,8 @@ export class WaterUsage {
                         h("td", { class: "slider" },
                             h("form", null,
                                 h("label", null, this.indoor.label),
-                                h("input", { type: "text", value: this.indoor.value, onInput: ev => this.indoorInput(ev) }),
-                                h("input", { onInput: ev => this.indoorInput(ev), type: "range", min: "0", max: this.indoor.max, value: this.indoor.value, step: "1", "aria-valuemin": "0", "aria-valuemax": this.indoor.max, "aria-valuenow": "0" }))),
+                                h("input", { disabled: true, type: "text", value: this.indoor.value, onInput: ev => this.indoorInput(ev) }),
+                                h("input", { onInput: ev => this.indoorInput(ev), disabled: true, type: "range", min: "0", max: this.indoor.max, value: this.indoor.value, step: "1", "aria-valuemin": "0", "aria-valuemax": this.indoor.max, "aria-valuenow": "0" }))),
                         h("td", null, Math.round(this.indoor.gallons)),
                         h("td", null, this.indoor.ccfunits.toFixed(3))))),
             h("table", null,
