@@ -1,5 +1,8 @@
 import { WaterUsageSlider } from './water-usage-slider';
 export declare class WaterUsage {
+    currentIndex: {
+        index: number;
+    };
     shower1: WaterUsageSlider;
     shower2: WaterUsageSlider;
     bath1: WaterUsageSlider;

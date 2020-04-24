@@ -6,7 +6,7 @@ export class WaterUsageSlider {
     max:number;
     gallons:number;
     ccfunits:number;
-
+    
     constructor(label:string, value:number, max:number, gallons:number, ccfunits:number) {
         this.label = label;
         this.value = value;

@@ -1,5 +1,23 @@
 
 @import "node_modules/calcite-web/dist/sass/calcite-web";
+@media (min-width: 860px) {
+.totals {
+    padding-top: 3em !important;
+}
+}
+
+.test {
+    width: 100%;
+    
+
+}
+.test form {
+    float:left;
+}
+.test2 {
+    float:right;
+}
+
 input[type=text] {
     float: left;
     width: 80px;
@@ -7,8 +25,39 @@ input[type=text] {
 input[type=range] {
     float: right;
     width: calc(100% - 80px - 1em);
+    min-width: 300px;
 }
 
+.totals {
+    padding-top:0;
+}
+
+
+.button {
+    width: 150px;
+    height: 50px;
+    margin-top:2em;
+}
+.back {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+.values {
+    align-items: flex-end;
+    margin-bottom: 0.75em !important;
+
+}
+
+.active {
+    display: block;
+}
+.inactive {
+    display: none;
+}
 
 @media (max-width: 37.5em){
     input[type=text] {
