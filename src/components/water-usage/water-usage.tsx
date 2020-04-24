@@ -454,11 +454,17 @@ export class WaterUsage {
 <h4>Total Monthly Water Usage</h4>
 
 <div>
-{Math.round(this.indoor.gallons)} gallons
+{Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
+    this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
+    this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
+    this.leaking.gallons+this.indoor.gallons)} gallons
 </div>
 
 <div>
-{this.indoor.ccfunits.toFixed(3)} CCF
+{(this.shower2.ccfunits+this.bath1.ccfunits+this.bath2.ccfunits+this.toilet.ccfunits+
+        this.teeth.ccfunits+this.shaving.ccfunits+this.washing.ccfunits+this.dishwasher.ccfunits+
+        this.dishes.ccfunits+this.clothes.ccfunits+this.outdoor.ccfunits+this.dripping.ccfunits+
+        this.leaking.ccfunits+this.indoor.ccfunits).toFixed(3)} CCF
 </div>
 
 </div>

@@ -309,10 +309,16 @@ export class WaterUsage {
             h("div", { class: (this.currentIndex.index === 13 ? ' active' : ' inactive') },
                 h("h4", null, "Total Monthly Water Usage"),
                 h("div", null,
-                    Math.round(this.indoor.gallons),
+                    Math.round(this.shower2.gallons + this.bath1.gallons + this.bath2.gallons + this.toilet.gallons +
+                        this.teeth.gallons + this.shaving.gallons + this.washing.gallons + this.dishwasher.gallons +
+                        this.dishes.gallons + this.clothes.gallons + this.outdoor.gallons + this.dripping.gallons +
+                        this.leaking.gallons + this.indoor.gallons),
                     " gallons"),
                 h("div", null,
-                    this.indoor.ccfunits.toFixed(3),
+                    (this.shower2.ccfunits + this.bath1.ccfunits + this.bath2.ccfunits + this.toilet.ccfunits +
+                        this.teeth.ccfunits + this.shaving.ccfunits + this.washing.ccfunits + this.dishwasher.ccfunits +
+                        this.dishes.ccfunits + this.clothes.ccfunits + this.outdoor.ccfunits + this.dripping.ccfunits +
+                        this.leaking.ccfunits + this.indoor.ccfunits).toFixed(3),
                     " CCF")),
             h("div", { class: (this.currentIndex.index === 13 ? ' active' : ' inactive') },
                 h("h4", null, "Total Monthly Water Usage"),
