@@ -140,7 +140,7 @@ export class WaterUsage {
             aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-            {Math.round(this.shower2.gallons)} gallons
+            {Math.round(this.shower2.gallons).toLocaleString()} gallons
             
         </div>
         <div class="column-4 totals">
@@ -164,7 +164,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(Math.round(this.bath1.gallons))} gallons
+        {Math.round(Math.round(this.bath1.gallons)).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -183,7 +183,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(Math.round(this.bath2.gallons))} gallons
+        {Math.round(Math.round(this.bath2.gallons)).toLocaleString()} gallons
             
         </div>
         <div class="column-4 totals">
@@ -207,7 +207,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.toilet.value*30.4*12)} gallons
+        {Math.round(this.toilet.value*30.4*12).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -230,7 +230,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.teeth.gallons)} gallons
+        {Math.round(this.teeth.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -253,7 +253,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.shaving.gallons)} gallons
+        {Math.round(this.shaving.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -276,7 +276,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.washing.gallons)} gallons
+        {Math.round(this.washing.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -300,7 +300,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.dishwasher.gallons)} gallons
+        {Math.round(this.dishwasher.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -324,7 +324,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.dishes.gallons)} gallons
+        {Math.round(this.dishes.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -347,7 +347,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.clothes.gallons)} gallons
+        {Math.round(this.clothes.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -371,7 +371,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.outdoor.gallons)} gallons
+        {Math.round(this.outdoor.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -395,7 +395,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.dripping.gallons)} gallons
+        {Math.round(this.dripping.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -418,7 +418,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.leaking.gallons)} gallons
+        {Math.round(this.leaking.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -441,7 +441,7 @@ export class WaterUsage {
                 aria-valuenow="0"/>
         </div>
         <div class="column-4 totals">
-        {Math.round(this.indoor.gallons)} gallons
+        {Math.round(this.indoor.gallons).toLocaleString()} gallons
 
         </div>
         <div class="column-4 totals">
@@ -456,7 +456,7 @@ export class WaterUsage {
 {Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
     this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
     this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
-    this.leaking.gallons+this.indoor.gallons)} gallons
+    this.leaking.gallons+this.indoor.gallons).toLocaleString()} gallons
 </div>
 
 <div>
@@ -484,7 +484,7 @@ export class WaterUsage {
 {Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
     this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
     this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
-    this.leaking.gallons+this.indoor.gallons)} gallons
+    this.leaking.gallons+this.indoor.gallons).toLocaleString().toLocaleString()} gallons
 </div>
 
 <div>
