@@ -9883,14 +9883,6 @@ html[dir=rtl] .margin-right-4 {
   width: 100%;
 }
 
-.test form {
-  float: left;
-}
-
-.test2 {
-  float: right;
-}
-
 input[type=text] {
   float: left;
   width: 80px;
@@ -9907,17 +9899,10 @@ input[type=range] {
 }
 
 .button {
-  width: 150px;
+  width: 100px;
   height: 50px;
   margin-top: 2em;
-}
-
-.back {
-  float: left;
-}
-
-.next {
-  float: right;
+  margin-right: 1em;
 }
 
 .values {

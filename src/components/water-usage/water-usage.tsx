@@ -450,9 +450,8 @@ export class WaterUsage {
         </div>    
     </div>
 </div>
-<div class={ (this.currentIndex.index === 13 ? ' active' : ' inactive') }>
+{/* <div class={ (this.currentIndex.index === 13 ? ' active' : ' inactive') }>
 <h4>Total Monthly Water Usage</h4>
-
 <div>
 {Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
     this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
@@ -466,27 +465,34 @@ export class WaterUsage {
         this.dishes.ccfunits+this.clothes.ccfunits+this.outdoor.ccfunits+this.dripping.ccfunits+
         this.leaking.ccfunits+this.indoor.ccfunits).toFixed(3)} CCF
 </div>
-
-</div>
-<div class={ (this.currentIndex.index === 13 ? ' active' : ' inactive') }>
-    <h4>Total Monthly Water Usage</h4>
-   
             <div class="paragraph">Water bills are calculated using CCF units. <br/>
                 A CCF unit represents 100 cubic feet. One CCF equals 748 gallons.</div>
       
-            </div>
+
+</div> */}
 
 
-
-
+<div>
  {this.currentIndex.index != 0
  ?<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index-=1}} class="button back">Back</button>:''}
     
     {this.currentIndex.index != 13
  ?<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index+=1}} class="button next">Next</button>:''}
-        
-             
-            </div>
+        </div>
+<h5>Total Monthly Water Usage</h5>
+<div>
+{Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
+    this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
+    this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
+    this.leaking.gallons+this.indoor.gallons)} gallons
+</div>
 
+<div>
+{(this.shower2.ccfunits+this.bath1.ccfunits+this.bath2.ccfunits+this.toilet.ccfunits+
+        this.teeth.ccfunits+this.shaving.ccfunits+this.washing.ccfunits+this.dishwasher.ccfunits+
+        this.dishes.ccfunits+this.clothes.ccfunits+this.outdoor.ccfunits+this.dripping.ccfunits+
+        this.leaking.ccfunits+this.indoor.ccfunits).toFixed(3)} CCF        
+</div>
+</div>
     }        
 }

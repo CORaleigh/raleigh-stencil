@@ -11,12 +11,6 @@
     
 
 }
-.test form {
-    float:left;
-}
-.test2 {
-    float:right;
-}
 
 input[type=text] {
     float: left;
@@ -34,17 +28,12 @@ input[type=range] {
 
 
 .button {
-    width: 150px;
+    width: 100px;
     height: 50px;
-    margin-top:2em;
-}
-.back {
-    float: left;
+    margin-top: 2em;
+    margin-right: 1em;
 }
 
-.next {
-    float: right;
-}
 
 .values {
     align-items: flex-end;

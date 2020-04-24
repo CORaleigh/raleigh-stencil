@@ -306,30 +306,24 @@ export class WaterUsage {
                     h("div", { class: "column-4 totals" },
                         this.indoor.ccfunits.toFixed(3),
                         " CCF"))),
-            h("div", { class: (this.currentIndex.index === 13 ? ' active' : ' inactive') },
-                h("h4", null, "Total Monthly Water Usage"),
-                h("div", null,
-                    Math.round(this.shower2.gallons + this.bath1.gallons + this.bath2.gallons + this.toilet.gallons +
-                        this.teeth.gallons + this.shaving.gallons + this.washing.gallons + this.dishwasher.gallons +
-                        this.dishes.gallons + this.clothes.gallons + this.outdoor.gallons + this.dripping.gallons +
-                        this.leaking.gallons + this.indoor.gallons),
-                    " gallons"),
-                h("div", null,
-                    (this.shower2.ccfunits + this.bath1.ccfunits + this.bath2.ccfunits + this.toilet.ccfunits +
-                        this.teeth.ccfunits + this.shaving.ccfunits + this.washing.ccfunits + this.dishwasher.ccfunits +
-                        this.dishes.ccfunits + this.clothes.ccfunits + this.outdoor.ccfunits + this.dripping.ccfunits +
-                        this.leaking.ccfunits + this.indoor.ccfunits).toFixed(3),
-                    " CCF")),
-            h("div", { class: (this.currentIndex.index === 13 ? ' active' : ' inactive') },
-                h("h4", null, "Total Monthly Water Usage"),
-                h("div", { class: "paragraph" },
-                    "Water bills are calculated using CCF units. ",
-                    h("br", null),
-                    "A CCF unit represents 100 cubic feet. One CCF equals 748 gallons.")),
-            this.currentIndex.index != 0
-                ? h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index -= 1 }), class: "button back" }, "Back") : '',
-            this.currentIndex.index != 13
-                ? h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index += 1 }), class: "button next" }, "Next") : '');
+            h("div", null,
+                this.currentIndex.index != 0
+                    ? h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index -= 1 }), class: "button back" }, "Back") : '',
+                this.currentIndex.index != 13
+                    ? h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index += 1 }), class: "button next" }, "Next") : ''),
+            h("h5", null, "Total Monthly Water Usage"),
+            h("div", null,
+                Math.round(this.shower2.gallons + this.bath1.gallons + this.bath2.gallons + this.toilet.gallons +
+                    this.teeth.gallons + this.shaving.gallons + this.washing.gallons + this.dishwasher.gallons +
+                    this.dishes.gallons + this.clothes.gallons + this.outdoor.gallons + this.dripping.gallons +
+                    this.leaking.gallons + this.indoor.gallons),
+                " gallons"),
+            h("div", null,
+                (this.shower2.ccfunits + this.bath1.ccfunits + this.bath2.ccfunits + this.toilet.ccfunits +
+                    this.teeth.ccfunits + this.shaving.ccfunits + this.washing.ccfunits + this.dishwasher.ccfunits +
+                    this.dishes.ccfunits + this.clothes.ccfunits + this.outdoor.ccfunits + this.dripping.ccfunits +
+                    this.leaking.ccfunits + this.indoor.ccfunits).toFixed(3),
+                " CCF"));
     }
     static get is() { return "water-usage"; }
     static get originalStyleUrls() { return {
