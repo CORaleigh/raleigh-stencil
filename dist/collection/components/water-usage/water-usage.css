@@ -9874,33 +9874,62 @@ html[dir=rtl] .margin-right-4 {
     padding-left: 4rem;
   }
 }
-@media (min-width: 860px) {
-  .totals {
-    padding-top: 3em !important;
-  }
-}
-.test {
+.inputs {
+  display: inline-flex;
   width: 100%;
 }
 
-input[type=text] {
-  float: left;
-  width: 80px;
-}
-
-input[type=range] {
-  float: right;
-  width: calc(100% - 80px - 1em);
-  min-width: 300px;
+.questions {
+  display: inline-flex;
+  width: 100%;
 }
 
 .totals {
-  padding-top: 0;
+  display: inline-flex;
+  width: 35%;
 }
 
-.button {
-  margin-top: 2em;
-  margin-right: 1em;
+.total {
+  margin: 0 1em 0 1em;
+}
+
+.next {
+  float: right;
+}
+
+.container {
+  margin: 0;
+  background-color: #f2f3f4;
+  width: 100%;
+  padding: 1em 1em 1em 1em;
+}
+
+.title {
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
+
+input[type=number] {
+  width: 100px;
+  margin-left: 1em;
+}
+
+input[type=range] {
+  width: 100%;
+}
+
+.results {
+  background-color: #231f20;
+  color: white;
+  width: 100%;
+  display: inline-flex;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .values {
@@ -9917,14 +9946,26 @@ input[type=range] {
 }
 
 @media (max-width: 37.5em) {
-  input[type=text] {
+  input[type=number] {
     float: none;
     width: 80px;
   }
 
   input[type=range] {
     float: none;
+    margin: 0;
+  }
+
+  .questions {
+    display: block;
+  }
+
+  .totals {
     width: 100%;
+  }
+
+  .results {
+    display: block;
   }
 }
 input:hover {
@@ -9933,20 +9974,6 @@ input:hover {
 
 label {
   margin: 0;
-}
-
-td.slider, th.slider {
-  width: 75%;
-  text-align: left;
-}
-
-td, th {
-  width: 12.5%;
-  text-align: center;
-}
-
-table {
-  width: 100%;
 }
 
 #waterUsage {

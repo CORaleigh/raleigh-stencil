@@ -112,387 +112,435 @@ export class WaterUsage {
 <h5>To estimate your monthly household water usage, slide the scrollbar next to each question to provide your
     answer. Calculations update automatically. </h5> */}
 <div class={ (this.currentIndex.index === 0 ? ' active' : ' inactive') }>
-    <h4>Showers</h4>
-    <h5>An average shower uses 5 gallons of water per minute. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-            <label>
-                {this.shower1.label}
-            </label>
-            <input type="text" value={this.shower1.value} onInput={ev=> this.shower1Input(ev)} />
+    
+    <h2 class="title t-forest">Showers</h2>
+    <div class="container">
+        An average shower uses 5 gallons of water per minute.
+    <label>
+        {this.shower1.label}
+    </label>
+    <div class="questions">
+        <div class="inputs">
             <input onInput={ev=> this.shower1Input(ev)} type="range" min="0" max={this.shower1.max}
-            value={this.shower1.value} step="1" aria-valuemin="0" aria-valuemax={this.shower1.max}
-            aria-valuenow="0"/>
+                value={this.shower1.value} step="1" aria-valuemin="0" aria-valuemax={this.shower1.max}
+                aria-valuenow="0"/>
+                <input type="number" min="0" max={this.shower1.max} value={this.shower1.value} onInput={ev=> this.shower1Input(ev)} />
         </div>
-        <div class="column-4 totals">
-        </div>
-        <div class="column-4 totals">
+        <div class="totals">
+            <div class="total">
+            </div>
+            <div class="total">
+            </div>
         </div>    
     </div>
-    <div class="grid-container">
-        <div class="column-16">
-            <label>
-                {this.shower2.label}
-            </label>
-            <input type="text" value={this.shower2.value} onInput={ev=> this.shower2Input(ev)} />
+    <label>
+        {this.shower2.label}
+    </label>    
+    <div class="questions">
+        <div class="inputs">
             <input onInput={ev=> this.shower2Input(ev)} type="range" min="0" max={this.shower2.max}
-            value={this.shower2.value} step="1" aria-valuemin="0" aria-valuemax={this.shower2.max}
-            aria-valuenow="0"/>
+                value={this.shower2.value} step="1" aria-valuemin="0" aria-valuemax={this.shower2.max}
+                aria-valuenow="0"/>
+                <input type="number" min="0" max={this.shower2.max} value={this.shower2.value} onInput={ev=> this.shower2Input(ev)} />
         </div>
-        <div class="column-4 totals">
+        <div class="totals">
+            <div class="total">
             {Math.round(this.shower2.gallons).toLocaleString()} gallons
-            
-        </div>
-        <div class="column-4 totals">
-            
-            {this.shower2.ccfunits.toFixed(3)} CCF
-            
+            </div>
+            <div class="total">
+                {this.shower2.ccfunits.toFixed(3)} CCF
+            </div>
         </div>    
-    </div>
+    </div>    
+</div>
 </div>
 <div class={ (this.currentIndex.index === 1 ? ' active' : ' inactive') }>
-<h4>Baths</h4>
-    <h5>A full-tub bath uses 36 gallons of water; a half-tub bath uses 18 gallons of water. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.bath1.label}
-                </label>
-                <input type="text" value={this.bath1.value} onInput={ev=> this.bath1Input(ev)} />
-                <input onInput={ev=> this.bath1Input(ev)} type="range" min="0" max={this.bath1.max}
+    
+    <h2 class="title t-forest">Baths</h2>
+    <div class="container">
+    A full-tub bath uses 36 gallons of water; a half-tub bath uses 18 gallons of water.    <label>
+    {this.bath1.label}
+    </label>
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.bath1Input(ev)} type="range" min="0" max={this.bath1.max}
                 value={this.bath1.value} step="1" aria-valuemin="0" aria-valuemax={this.bath1.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(Math.round(this.bath1.gallons)).toLocaleString()} gallons
+                <input type="number" min="0" max={this.bath1.max} value={this.bath1.value} onInput={ev=> this.bath1Input(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.bath1.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(Math.round(this.bath1.gallons)).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.bath1.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.bath2.label}
-                </label>
-                <input type="text" value={this.bath2.value} onInput={ev=> this.bath2Input(ev)} />
-                <input onInput={ev=> this.bath2Input(ev)} type="range" min="0" max={this.bath2.max}
+    <label>
+        {this.bath2.label}
+    </label>    
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.bath2Input(ev)} type="range" min="0" max={this.bath2.max}
                 value={this.bath2.value} step="1" aria-valuemin="0" aria-valuemax={this.bath2.max}
                 aria-valuenow="0"/>
+                <input type="number" min="0" max={this.bath2.max} value={this.bath2.value} onInput={ev=> this.bath2Input(ev)} />
         </div>
-        <div class="column-4 totals">
-        {Math.round(Math.round(this.bath2.gallons)).toLocaleString()} gallons
-            
-        </div>
-        <div class="column-4 totals">
-            
-        {this.bath2.ccfunits.toFixed(3)} CCF
-            
+        <div class="totals">
+            <div class="total">
+            {Math.round(Math.round(this.bath2.gallons)).toLocaleString()} gallons            </div>
+            <div class="total">
+            {this.bath2.ccfunits.toFixed(3)} CCF
+            </div>
         </div>    
-    </div>
+    </div>    
+</div>
 </div>
 <div class={ (this.currentIndex.index === 2 ? ' active' : ' inactive') }>
-<h4>Toilet Flushes</h4>
-    <h5>The average person flushes 4 times daily, using 3 gallons of water per flush. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.toilet.label}
-                </label>
-                <input type="text" value={this.toilet.value} onInput={ev=> this.toiletInput(ev)} />
-                <input onInput={ev=> this.toiletInput(ev)} type="range" min="0" max={this.toilet.max}
+    
+    <h2 class="title t-forest">Toilet Flushes</h2>
+    <div class="container">
+    The average person flushes 4 times daily, using 3 gallons of water per flush.     <label>
+    {this.toilet.label}
+    </label>
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.toiletInput(ev)} type="range" min="0" max={this.toilet.max}
                 value={this.toilet.value} step="1" aria-valuemin="0" aria-valuemax={this.toilet.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.toilet.value*30.4*12).toLocaleString()} gallons
+                <input type="number" min="0" max={this.toilet.max} value={this.toilet.value} onInput={ev=> this.toiletInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.toilet.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.toilet.value*30.4*12).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.toilet.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 3 ? ' active' : ' inactive') }>
-<h4>Brushing Teeth</h4>
-    <h5>The average person uses 3 gallons of water each time they brush their teeth. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.teeth.label}
-                </label>
-                <input type="text" value={this.teeth.value} onInput={ev=> this.teethInput(ev)} />
-                <input onInput={ev=> this.teethInput(ev)} type="range" min="0" max={this.teeth.max}
+    
+    <h2 class="title t-forest">Brushing Teeth</h2>
+    <div class="container">
+    The average person uses 3 gallons of water each time they brush their teeth.
+    <label>
+    {this.teeth.label}
+    </label>
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.teethInput(ev)} type="range" min="0" max={this.teeth.max}
                 value={this.teeth.value} step="1" aria-valuemin="0" aria-valuemax={this.teeth.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.teeth.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.teeth.max} value={this.teeth.value} onInput={ev=> this.teethInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.teeth.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.teeth.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.teeth.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 4 ? ' active' : ' inactive') }>
-<h4>Shaving</h4>
-<h5>The average shave uses 1 gallon of water. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
+    
+    <h2 class="title t-forest">Shaving</h2>
+    <div class="container">
+    The average shave uses 1 gallon of water.
+    <label>
                     {this.shaving.label}
                 </label>
-                <input type="text" value={this.shaving.value} onInput={ev=> this.shavingInput(ev)} />
-                <input onInput={ev=> this.shavingInput(ev)} type="range" min="0" max={this.shaving.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.shavingInput(ev)} type="range" min="0" max={this.shaving.max}
                 value={this.shaving.value} step="1" aria-valuemin="0" aria-valuemax={this.shaving.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.shaving.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.shaving.max} value={this.shaving.value} onInput={ev=> this.shavingInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.shaving.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.shaving.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.shaving.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 5 ? ' active' : ' inactive') }>
-<h4>Face/Hand Washing</h4>
-<h5>Each time you wash your face or hands, approximately 1 gallon of water is used.</h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.washing.label}
+    
+    <h2 class="title t-forest">Face/Hand Washing</h2>
+    <div class="container">
+    Each time you wash your face or hands, approximately 1 gallon of water is used.    <label>
+    {this.washing.label}
                 </label>
-                <input type="text" value={this.washing.value} onInput={ev=> this.washingInput(ev)} />
-                <input onInput={ev=> this.washingInput(ev)} type="range" min="0" max={this.washing.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.washingInput(ev)} type="range" min="0" max={this.washing.max}
                 value={this.washing.value} step="1" aria-valuemin="0" aria-valuemax={this.washing.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.washing.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.washing.max} value={this.washing.value} onInput={ev=> this.washingInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.washing.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.washing.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.washing.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
 </div>
-
+</div>
 <div class={ (this.currentIndex.index === 6 ? ' active' : ' inactive') }>
-<h4>Dishwasher</h4>
-<h5>The average dishwasher uses 16 gallons of water per wash.</h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.dishwasher.label}
+    
+    <h2 class="title t-forest">Dishwasher</h2>
+    <div class="container">
+    The average dishwasher uses 16 gallons of water per wash.
+    <label>
+    {this.dishwasher.label}
                 </label>
-                <input type="text" value={this.dishwasher.value} onInput={ev=> this.dishwasherInput(ev)} />
-                <input onInput={ev=> this.dishwasherInput(ev)} type="range" min="0" max={this.dishwasher.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.dishwasherInput(ev)} type="range" min="0" max={this.dishwasher.max}
                 value={this.dishwasher.value} step="1" aria-valuemin="0" aria-valuemax={this.dishwasher.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.dishwasher.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.dishwasher.max} value={this.dishwasher.value} onInput={ev=> this.dishwasherInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.dishwasher.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.dishwasher.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.dishwasher.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
 </div>
-
+</div>
 <div class={ (this.currentIndex.index === 7 ? ' active' : ' inactive') }>
-<h4>Hand-Washing Dishes</h4>
-    <h5>Hand-washing dishes with water running uses 3 gallons of water per minute.</h5>
-    <div class="grid-container">
-        <div class="column-16">
+    
+    <h2 class="title t-forest">Hand-Washing Dishes</h2>
+    <div class="container">
+    Hand-washing dishes with water running uses 3 gallons of water per minute.
         <label>
-                    {this.dishes.label}
+    {this.dishes.label}
                 </label>
-                <input type="text" value={this.dishes.value} onInput={ev=> this.dishesInput(ev)} />
-                <input onInput={ev=> this.dishesInput(ev)} type="range" min="0" max={this.dishes.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.dishesInput(ev)} type="range" min="0" max={this.dishes.max}
                 value={this.dishes.value} step="1" aria-valuemin="0" aria-valuemax={this.dishes.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.dishes.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.dishes.max} value={this.dishes.value} onInput={ev=> this.dishesInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.dishes.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.dishes.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.dishes.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 8 ? ' active' : ' inactive') }>
-<h4>Clothes Washer</h4>
-    <h5>The average washing machine uses 44 gallons of water per load of laundry.</h5>
-    <div class="grid-container">
-        <div class="column-16">
+    
+    <h2 class="title t-forest">Clothes Washer</h2>
+    <div class="container">
+    The average washing machine uses 44 gallons of water per load of laundry.
         <label>
-                    {this.clothes.label}
+    {this.clothes.label}
                 </label>
-                <input type="text" value={this.clothes.value} onInput={ev=> this.clothesInput(ev)} />
-                <input onInput={ev=> this.clothesInput(ev)} type="range" min="0" max={this.clothes.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.clothesInput(ev)} type="range" min="0" max={this.clothes.max}
                 value={this.clothes.value} step="1" aria-valuemin="0" aria-valuemax={this.clothes.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.clothes.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.clothes.max} value={this.clothes.value} onInput={ev=> this.clothesInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.clothes.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.clothes.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.clothes.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
 </div>
-
+</div>
 <div class={ (this.currentIndex.index === 9 ? ' active' : ' inactive') }>
-<h4>Outdoor Use</h4>
-<h5>When using water outdoors, the average use is 6 gallons of water per minute.</h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.outdoor.label}
+    
+    <h2 class="title t-forest">Outdoor Use</h2>
+    <div class="container">
+    When using water outdoors, the average use is 6 gallons of water per minute.        <label>
+    {this.outdoor.label}
                 </label>
-                <input type="text" value={this.outdoor.value} onInput={ev=> this.outdoorInput(ev)} />
-                <input onInput={ev=> this.outdoorInput(ev)} type="range" min="0" max={this.outdoor.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.outdoorInput(ev)} type="range" min="0" max={this.outdoor.max}
                 value={this.outdoor.value} step="1" aria-valuemin="0" aria-valuemax={this.outdoor.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.outdoor.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.outdoor.max} value={this.outdoor.value} onInput={ev=> this.outdoorInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.outdoor.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.outdoor.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.outdoor.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
 </div>
-
+</div>
 <div class={ (this.currentIndex.index === 10 ? ' active' : ' inactive') }>
-<h4>Dripping faucet</h4>
-<h5>A faucet that drips 10 times per minute uses 1 gallon of water per day.</h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.dripping.label}
+    
+    <h2 class="title t-forest">Dripping faucet</h2>
+    <div class="container">
+    A faucet that drips 10 times per minute uses 1 gallon of water per day.
+    <label>
+    {this.dripping.label}
                 </label>
-                <input type="text" value={this.dripping.value} onInput={ev=> this.drippingInput(ev)} />
-                <input onInput={ev=> this.drippingInput(ev)} type="range" min="0" max={this.dripping.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.drippingInput(ev)} type="range" min="0" max={this.dripping.max}
                 value={this.dripping.value} step="1" aria-valuemin="0" aria-valuemax={this.dripping.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.dripping.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.dripping.max} value={this.dripping.value} onInput={ev=> this.drippingInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.dripping.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.dripping.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.dripping.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 11 ? ' active' : ' inactive') }>
-<h4>Leaking toilet</h4>
-    <h5>A leaking toilet can use 200 or more gallons of water per day.</h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.leaking.label}
+    
+    <h2 class="title t-forest">Leaking toilet</h2>
+    <div class="container">
+    A leaking toilet can use 200 or more gallons of water per day.
+    <label>
+    {this.leaking.label}
                 </label>
-                <input type="text" value={this.leaking.value} onInput={ev=> this.leakingInput(ev)} />
-                <input onInput={ev=> this.leakingInput(ev)} type="range" min="0" max={this.leaking.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.leakingInput(ev)} type="range" min="0" max={this.leaking.max}
                 value={this.leaking.value} step="1" aria-valuemin="0" aria-valuemax={this.leaking.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.leaking.gallons).toLocaleString()} gallons
+                <input type="number" min="0" max={this.leaking.max} value={this.leaking.value} onInput={ev=> this.leakingInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.leaking.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.leaking.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.leaking.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
+</div>
 </div>
 <div class={ (this.currentIndex.index === 12 ? ' active' : ' inactive') }>
-<h4>Other Indoor Use</h4>
-    <h5>An average person uses 10 gallons of water per day for other various indoor uses. </h5>
-    <div class="grid-container">
-        <div class="column-16">
-        <label>
-                    {this.indoor.label}
+    
+    <h2 class="title t-forest">Other Indoor Use</h2>
+    <div class="container">
+    An average person uses 10 gallons of water per day for other various indoor uses. 
+    <label>
+    {this.indoor.label}
                 </label>
-                <input disabled type="text" value={this.indoor.value} onInput={ev=> this.indoorInput(ev)} />
-                <input onInput={ev=> this.indoorInput(ev)} disabled type="range" min="0" max={this.indoor.max}
+    <div class="questions">
+        <div class="inputs">
+        <input onInput={ev=> this.indoorInput(ev)} disabled type="range" min="0" max={this.indoor.max}
                 value={this.indoor.value} step="1" aria-valuemin="0" aria-valuemax={this.indoor.max}
                 aria-valuenow="0"/>
-        </div>
-        <div class="column-4 totals">
-        {Math.round(this.indoor.gallons).toLocaleString()} gallons
+                <input disabled type="number" min="0" max={this.indoor.max} value={this.indoor.value} onInput={ev=> this.indoorInput(ev)} />
 
         </div>
-        <div class="column-4 totals">
-        {this.indoor.ccfunits.toFixed(3)} CCF
+        <div class="totals">
+            <div class="total">
+            {Math.round(this.indoor.gallons).toLocaleString()} gallons
+            </div>
+            <div class="total">
+            {this.indoor.ccfunits.toFixed(3)} CCF
 
+            </div>
         </div>    
     </div>
 </div>
-{/* <div class={ (this.currentIndex.index === 13 ? ' active' : ' inactive') }>
-<h4>Total Monthly Water Usage</h4>
-<div>
+</div>
+
+
+<div class="container">
+<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index-=1}}class={ (this.currentIndex.index !=0 ? 'button back ' : ' hidden button back') }>Previous</button>
+    
+
+<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index+=1}}class={ (this.currentIndex.index !=12 ? 'button next ' : ' hidden button back') }>Next</button> 
+        </div>
+
+   
+<div class="results">
+
+<h5>Total Monthly Water Usage</h5>
+<div class="totals">
+<div class="total">
 {Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
     this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
     this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
-    this.leaking.gallons+this.indoor.gallons).toLocaleString()} gallons
+    this.leaking.gallons+this.indoor.gallons).toLocaleString().toLocaleString()} Gallons
 </div>
 
-<div>
+<div class="total">
+
 {(this.shower2.ccfunits+this.bath1.ccfunits+this.bath2.ccfunits+this.toilet.ccfunits+
         this.teeth.ccfunits+this.shaving.ccfunits+this.washing.ccfunits+this.dishwasher.ccfunits+
         this.dishes.ccfunits+this.clothes.ccfunits+this.outdoor.ccfunits+this.dripping.ccfunits+
         this.leaking.ccfunits+this.indoor.ccfunits).toFixed(3)} CCF
+
+
+</div> 
 </div>
-            <div class="paragraph">Water bills are calculated using CCF units. <br/>
-                A CCF unit represents 100 cubic feet. One CCF equals 748 gallons.</div>
-      
-
-</div> */}
-
-
-<div>
- {this.currentIndex.index != 0
- ?<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index-=1}} class="button back">Back</button>:''}
-    
-    {this.currentIndex.index != 13
- ?<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index+=1}} class="button next">Next</button>:''}
-        </div>
-<h5>Total Monthly Water Usage</h5>
-<div>
-{Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+
-    this.teeth.gallons+this.shaving.gallons+this.washing.gallons+this.dishwasher.gallons+
-    this.dishes.gallons+this.clothes.gallons+this.outdoor.gallons+this.dripping.gallons+
-    this.leaking.gallons+this.indoor.gallons).toLocaleString().toLocaleString()} gallons
+   
 </div>
 
-<div>
-{(this.shower2.ccfunits+this.bath1.ccfunits+this.bath2.ccfunits+this.toilet.ccfunits+
-        this.teeth.ccfunits+this.shaving.ccfunits+this.washing.ccfunits+this.dishwasher.ccfunits+
-        this.dishes.ccfunits+this.clothes.ccfunits+this.outdoor.ccfunits+this.dripping.ccfunits+
-        this.leaking.ccfunits+this.indoor.ccfunits).toFixed(3)} CCF        
-</div>
+        
+
+
 </div>
     }        
 }
