@@ -11,10 +11,15 @@
 }
 .totals{
     display:inline-flex;
-    width: 35%;
+    width: 65%;
 }
+
+.questions .totals {
+    padding-top:0.25em;
+}
+
 .total{
-    margin: 0 1em 0 1em;
+    margin: 0 0 0 1em;
 
 }
 
@@ -56,6 +61,10 @@ input[type=range] {
 
 }
 
+.results .totals {
+    width:100%;
+}
+
 .hidden {
     visibility: hidden;
 }
@@ -91,8 +100,14 @@ input[type=range] {
     .totals {
         width: 100%;
     }
+    .total {
+        margin: 0 1em 0 0;
+    }
     .results{
         display: block;
+    }
+    .results .totals {
+        margin-top:1em;
     }
     
 }
@@ -116,7 +131,10 @@ label {
 #waterUsage {
     margin: 0 1em 0 1em;
 }
-
+.results h3 {
+    color: white;
+    width: 100%;
+}
 
 
 

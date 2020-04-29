@@ -9886,11 +9886,15 @@ html[dir=rtl] .margin-right-4 {
 
 .totals {
   display: inline-flex;
-  width: 35%;
+  width: 65%;
+}
+
+.questions .totals {
+  padding-top: 0.25em;
 }
 
 .total {
-  margin: 0 1em 0 1em;
+  margin: 0 0 0 1em;
 }
 
 .next {
@@ -9926,6 +9930,10 @@ input[type=range] {
   width: 100%;
   display: inline-flex;
   padding: 0.5em 1em 0.5em 1em;
+}
+
+.results .totals {
+  width: 100%;
 }
 
 .hidden {
@@ -9964,8 +9972,16 @@ input[type=range] {
     width: 100%;
   }
 
+  .total {
+    margin: 0 1em 0 0;
+  }
+
   .results {
     display: block;
+  }
+
+  .results .totals {
+    margin-top: 1em;
   }
 }
 input[type=range]:hover {
@@ -9986,4 +10002,9 @@ label {
 
 #waterUsage {
   margin: 0 1em 0 1em;
+}
+
+.results h3 {
+  color: white;
+  width: 100%;
 }

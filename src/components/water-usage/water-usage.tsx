@@ -516,7 +516,7 @@ export class WaterUsage {
    
 <div class="results">
 
-<h5>Total Monthly Water Usage</h5>
+<h3>Total Monthly Water Usage</h3>
 <div class="totals">
 <div class="total">
 {Math.round(this.shower2.gallons+this.bath1.gallons+this.bath2.gallons+this.toilet.gallons+

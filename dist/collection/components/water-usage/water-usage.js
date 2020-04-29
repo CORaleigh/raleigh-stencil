@@ -338,7 +338,7 @@ export class WaterUsage {
                 h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index -= 1 }), class: (this.currentIndex.index != 0 ? 'button back ' : ' hidden button back') }, "Previous"),
                 h("button", { onClick: () => this.currentIndex = Object.assign(Object.assign({}, this.currentIndex), { index: this.currentIndex.index += 1 }), class: (this.currentIndex.index != 12 ? 'button next ' : ' hidden button back') }, "Next")),
             h("div", { class: "results" },
-                h("h5", null, "Total Monthly Water Usage"),
+                h("h3", null, "Total Monthly Water Usage"),
                 h("div", { class: "totals" },
                     h("div", { class: "total" },
                         Math.round(this.shower2.gallons + this.bath1.gallons + this.bath2.gallons + this.toilet.gallons +
