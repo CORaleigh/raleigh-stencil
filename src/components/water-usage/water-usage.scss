@@ -97,9 +97,17 @@ input[type=range] {
     
 }
 
-input:hover{
-    border-color: #046A38 !important;
+input[type=range]:hover{
+    border: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
+input[type=range]:focus{
+    border: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 
 label {
     margin: 0;
@@ -107,4 +115,34 @@ label {
 
 #waterUsage {
     margin: 0 1em 0 1em;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: #4c8c2b;
+    border-color: #4C8C2B;
+    -webkit-box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+    box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+
+}
+
+
+input[type=range]::-webkit-slider-thumb:focus:hover, input[type=range]::-webkit-slider-thumb:active:hover {
+    background-color: #4c8c2b;
+    border-color: #4C8C2B;
+    -webkit-box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+    box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+}
+input[type=range]::-webkit-slider-thumb:hover {
+
+    background-color: #4c8c2b;
+    border-color: #4C8C2B;
+    -webkit-box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+    box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+}
+input[type=range]::-webkit-slider-thumb:focus {
+    background-color: #4c8c2b;
+    border-color: #4C8C2B;
+    -webkit-box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
+    box-shadow: 0 0 4px 1px rgba(76,140,43,.9);
 }
