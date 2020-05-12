@@ -4,6 +4,7 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
+    "allowJs": true,
     "lib": [
       "dom",
       "es2017"

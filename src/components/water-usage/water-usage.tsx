@@ -163,7 +163,7 @@ export class WaterUsage {
     </label>
     <div class="questions">
         <div class="inputs">
-        <inp type="range" onInput={ev=> this.bath1Input(ev)} onChange={ev=> this.bath1Input(ev)} min="0" max={this.bath1.max}
+        <input type="range" onInput={ev=> this.bath1Input(ev)} onChange={ev=> this.bath1Input(ev)} min="0" max={this.bath1.max}
                 value={this.bath1.value} step="1" aria-valuemin="0" aria-valuemax={this.bath1.max}
                 aria-valuenow="0"/>
                 <input type="number" min="0" max={this.bath1.max} value={this.bath1.value} onInput={ev=> this.bath1Input(ev)} />
@@ -184,7 +184,7 @@ export class WaterUsage {
     </label>    
     <div class="questions">
         <div class="inputs">
-        <inp type="range" onInput={ev=> this.bath2Input(ev)} onChange={ev=> this.bath2Input(ev)} min="0" max={this.bath2.max}
+        <input type="range" onInput={ev=> this.bath2Input(ev)} onChange={ev=> this.bath2Input(ev)} min="0" max={this.bath2.max}
                 value={this.bath2.value} step="1" aria-valuemin="0" aria-valuemax={this.bath2.max}
                 aria-valuenow="0"/>
                 <input type="number" min="0" max={this.bath2.max} value={this.bath2.value} onInput={ev=> this.bath2Input(ev)} />
@@ -208,7 +208,7 @@ export class WaterUsage {
     </label>
     <div class="questions">
         <div class="inputs">
-        <inpu type="range" onInput={ev=> this.toiletInput(ev)} onChange={ev=> this.toiletInput(ev)} min="0" max={this.toilet.max}
+        <input type="range" onInput={ev=> this.toiletInput(ev)} onChange={ev=> this.toiletInput(ev)} min="0" max={this.toilet.max}
                 value={this.toilet.value} step="1" aria-valuemin="0" aria-valuemax={this.toilet.max}
                 aria-valuenow="0"/>
                 <input type="number" min="0" max={this.toilet.max} value={this.toilet.value} onInput={ev=> this.toiletInput(ev)} />
@@ -236,7 +236,7 @@ export class WaterUsage {
     </label>
     <div class="questions">
         <div class="inputs">
-        <inp type="range" onInput={ev=> this.teethInput(ev)} onChange={ev=> this.teethInput(ev)} min="0" max={this.teeth.max}
+        <input type="range" onInput={ev=> this.teethInput(ev)} onChange={ev=> this.teethInput(ev)} min="0" max={this.teeth.max}
                 value={this.teeth.value} step="1" aria-valuemin="0" aria-valuemax={this.teeth.max}
                 aria-valuenow="0"/>
                 <input type="number" min="0" max={this.teeth.max} value={this.teeth.value} onInput={ev=> this.teethInput(ev)} />
@@ -347,7 +347,7 @@ export class WaterUsage {
                 </label>
     <div class="questions">
         <div class="inputs">
-        <inpu type="range" onInput={ev=> this.dishesInput(ev)} onChange={ev=> this.dishesInput(ev)} min="0" max={this.dishes.max}
+        <input type="range" onInput={ev=> this.dishesInput(ev)} onChange={ev=> this.dishesInput(ev)} min="0" max={this.dishes.max}
                 value={this.dishes.value} step="1" aria-valuemin="0" aria-valuemax={this.dishes.max}
                 aria-valuenow="0"/>
                 <input type="number" min="0" max={this.dishes.max} value={this.dishes.value} onInput={ev=> this.dishesInput(ev)} />
