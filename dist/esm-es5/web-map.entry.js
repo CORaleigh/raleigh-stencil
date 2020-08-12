@@ -155,7 +155,6 @@ var WebMap = /** @class */ (function () {
             });
         };
         this.featureClicked = function (feature) {
-            debugger;
             _this.mapView.goTo(feature);
         };
     }

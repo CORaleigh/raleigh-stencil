@@ -112,7 +112,6 @@ const WebMap = class {
             });
         };
         this.featureClicked = (feature) => {
-            debugger;
             this.mapView.goTo(feature);
         };
     }
