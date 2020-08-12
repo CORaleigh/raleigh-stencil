@@ -1,9 +1,9 @@
 {
   "entries": [
-    "components/map-gallery/map-gallery.js",
-    "components/find-my-service/find-my-service.js",
-    "components/transit-map/transit-map.js",
     "components/web-map/web-map.js",
+    "components/map-gallery/map-gallery.js",
+    "components/transit-map/transit-map.js",
+    "components/find-my-service/find-my-service.js",
     "components/water-usage/water-usage.js"
   ],
   "compiler": {

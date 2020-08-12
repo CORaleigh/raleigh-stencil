@@ -249,7 +249,6 @@ const WebMap = class {
                         if (this.popup) {
                             mapView.popup.open({ features: result.features });
                         }
-                        debugger;
                         this.features = [...result.features];
                     }
                 });
@@ -296,9 +295,14 @@ const WebMap = class {
         });
     }
     render() {
-        return core.h("div", { class: "container" }, core.h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }), core.h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(feature => {
-            return core.h("div", { onClick: () => { this.featureClicked(feature); }, id: this.divId + '_list_' + feature.attributes['OBJECTID'] }, this.loadFeatureWidget(this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
-        })));
+        if (this.list) {
+            return core.h("div", { class: "container" }, core.h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }), core.h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(feature => {
+                return core.h("div", { onClick: () => { this.featureClicked(feature); }, id: this.divId + '_list_' + feature.attributes['OBJECTID'] }, this.loadFeatureWidget(this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
+            })));
+        }
+        else {
+            return core.h("div", { class: "container" }, core.h("div", { id: this.divId }));
+        }
     }
     get element() { return core.getElement(this); }
     static get style() { return "\@import url(\"https://js.arcgis.com/4.13/esri/themes/light/main.css\");.esri-view{height:100%;width:100%}.list-mode{max-height:50%;overflow:auto}\@media only screen and (min-width:800px){.list-mode.list{max-width:400px}.list-mode.list,.list-mode.map{max-height:100%;overflow:auto;float:left}.list-mode.map{max-width:calc(100% - 400px)}}:host{position:absolute;left:0;right:0;bottom:0;top:0}.container,body,html{height:100%;width:100%;margin:0;font-family:sans-serif}"; }

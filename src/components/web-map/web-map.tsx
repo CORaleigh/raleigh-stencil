@@ -257,7 +257,6 @@ query(mapView) {
                     if (this.popup) {
                         mapView.popup.open({features:result.features});
                     }
-                    debugger
                     this.features = [...result.features];
                 }
             });
@@ -311,13 +310,21 @@ featureClicked = (feature) => {
     this.mapView.goTo(feature);
 }
 render() {
-    return <div class="container"><div class={(this.list) ? 'list-mode map':''} id={this.divId}></div>
-            <div class={(this.list) ? 'list-mode list':''} >
-            {this.features.map(feature => {
-                return <div onClick={() => {this.featureClicked(feature)}} id={this.divId + '_list_'+feature.attributes['OBJECTID']}>{this.loadFeatureWidget(this.divId + '_list_'+feature.attributes['OBJECTID'], feature)}</div>
-            })}
-            </div>
+    
+    if (this.list) {
+        return <div class="container">
+            <div class={(this.list) ? 'list-mode map':''} id={this.divId}></div>
+                <div class={(this.list) ? 'list-mode list':''} >
+                {this.features.map(feature => {
+                    return <div onClick={() => {this.featureClicked(feature)}} id={this.divId + '_list_'+feature.attributes['OBJECTID']}>{this.loadFeatureWidget(this.divId + '_list_'+feature.attributes['OBJECTID'], feature)}</div>
+                })}
+                </div>
 
-    </div>
+        </div>
+    }else {
+        return <div class="container">
+            <div id={this.divId}></div>
+        </div>
+    }
 }
 }

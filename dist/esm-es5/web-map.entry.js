@@ -358,7 +358,6 @@ var WebMap = /** @class */ (function () {
                         if (_this.popup) {
                             mapView.popup.open({ features: result.features });
                         }
-                        debugger;
                         _this.features = __spreadArrays(result.features);
                     }
                 });
@@ -408,9 +407,14 @@ var WebMap = /** @class */ (function () {
     };
     class_1.prototype.render = function () {
         var _this = this;
-        return h("div", { class: "container" }, h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }), h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(function (feature) {
-            return h("div", { onClick: function () { _this.featureClicked(feature); }, id: _this.divId + '_list_' + feature.attributes['OBJECTID'] }, _this.loadFeatureWidget(_this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
-        })));
+        if (this.list) {
+            return h("div", { class: "container" }, h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }), h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(function (feature) {
+                return h("div", { onClick: function () { _this.featureClicked(feature); }, id: _this.divId + '_list_' + feature.attributes['OBJECTID'] }, _this.loadFeatureWidget(_this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
+            })));
+        }
+        else {
+            return h("div", { class: "container" }, h("div", { id: this.divId }));
+        }
     };
     Object.defineProperty(class_1.prototype, "element", {
         get: function () { return getElement(this); },

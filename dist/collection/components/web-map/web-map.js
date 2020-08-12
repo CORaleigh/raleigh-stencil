@@ -243,7 +243,6 @@ export class WebMap {
                         if (this.popup) {
                             mapView.popup.open({ features: result.features });
                         }
-                        debugger;
                         this.features = [...result.features];
                     }
                 });
@@ -290,11 +289,17 @@ export class WebMap {
         });
     }
     render() {
-        return h("div", { class: "container" },
-            h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }),
-            h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(feature => {
-                return h("div", { onClick: () => { this.featureClicked(feature); }, id: this.divId + '_list_' + feature.attributes['OBJECTID'] }, this.loadFeatureWidget(this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
-            })));
+        if (this.list) {
+            return h("div", { class: "container" },
+                h("div", { class: (this.list) ? 'list-mode map' : '', id: this.divId }),
+                h("div", { class: (this.list) ? 'list-mode list' : '' }, this.features.map(feature => {
+                    return h("div", { onClick: () => { this.featureClicked(feature); }, id: this.divId + '_list_' + feature.attributes['OBJECTID'] }, this.loadFeatureWidget(this.divId + '_list_' + feature.attributes['OBJECTID'], feature));
+                })));
+        }
+        else {
+            return h("div", { class: "container" },
+                h("div", { id: this.divId }));
+        }
     }
     static get is() { return "web-map"; }
     static get originalStyleUrls() { return {
