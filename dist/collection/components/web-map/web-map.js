@@ -110,7 +110,6 @@ export class WebMap {
             });
         };
         this.featureClicked = (feature) => {
-            debugger;
             this.mapView.goTo(feature);
         };
     }

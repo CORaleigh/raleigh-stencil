@@ -306,7 +306,7 @@ loadFeatureWidget(id, feature) {
     });
 }
 featureClicked = (feature) => {
-    debugger
+    
     this.mapView.goTo(feature);
 }
 render() {
