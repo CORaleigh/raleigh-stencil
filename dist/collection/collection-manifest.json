@@ -1,10 +1,18 @@
 {
   "entries": [
+<<<<<<< HEAD
     "components/web-map/web-map.js",
     "components/map-gallery/map-gallery.js",
     "components/transit-map/transit-map.js",
     "components/find-my-service/find-my-service.js",
     "components/water-usage/water-usage.js"
+=======
+    "components\\map-gallery\\map-gallery.js",
+    "components\\find-my-service\\find-my-service.js",
+    "components\\web-map\\web-map.js",
+    "components\\transit-map\\transit-map.js",
+    "components\\water-usage\\water-usage.js"
+>>>>>>> b5ca9baccc2a88b094bddd5775f349359cedcce6
   ],
   "compiler": {
     "name": "@stencil/core",

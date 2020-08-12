@@ -507,10 +507,10 @@ export class WaterUsage {
 
 
 <div class="container">
-<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index-=1}}class={ (this.currentIndex.index !=0 ? 'button back ' : ' hidden button back') }>Previous</button>
+<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index-=1}}class={ (this.currentIndex.index !=0 ? 'button back ' : ' btn-hidden button back') }>Previous</button>
     
 
-<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index+=1}}class={ (this.currentIndex.index !=12 ? 'button next ' : ' hidden button back') }>Next</button> 
+<button onClick={()=> this.currentIndex = {...this.currentIndex, index:this.currentIndex.index+=1}}class={ (this.currentIndex.index !=12 ? 'button next ' : ' btn-hidden button back') }>Next</button> 
         </div>
 
    

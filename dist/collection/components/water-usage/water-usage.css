@@ -9936,7 +9936,7 @@ input[type=range] {
   width: 100%;
 }
 
-.hidden {
+.btn-hidden {
   visibility: hidden;
 }
 
